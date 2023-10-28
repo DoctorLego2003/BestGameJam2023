@@ -1,8 +1,8 @@
+PathFollow3D
+Node3D
 CollisionShape3D
 Area3D
-PathFollow3D
 Path3D
 DirectionalLight3D
-Node3D
 OmniLight3D
 Camera3D
