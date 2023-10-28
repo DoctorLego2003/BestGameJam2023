@@ -1,0 +1,6 @@
+res://scripts/TowerText.gd
+res://scripts/RoadText.gd
+res://scripts/GrassText.gd
+res://scripts/ForestText.gd
+res://scripts/CastleText.gd
+res://scenes/other scenes/main.tscn
