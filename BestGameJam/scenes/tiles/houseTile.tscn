@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bljdur3g47tc4"]
+
+[ext_resource type="PackedScene" uid="uid://4h1hib3ndbw0" path="res://models/basicTiles/hex_forest_detail.gltf.glb" id="1_swpp7"]
+[ext_resource type="PackedScene" uid="uid://dfbqr74huasan" path="res://models/details/house.gltf.glb" id="2_f3osq"]
+
+[node name="houseTile" type="Node3D"]
+
+[node name="grassTileModel" parent="." instance=ExtResource("1_swpp7")]
+
+[node name="houseModel" parent="." instance=ExtResource("2_f3osq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
