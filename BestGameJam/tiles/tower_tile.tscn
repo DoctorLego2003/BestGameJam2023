@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dch4nsrk7xjga"]
+
+[ext_resource type="PackedScene" uid="uid://deoc23hvrgfrg" path="res://models/hex_forest_detail.gltf.glb" id="1_eojja"]
+[ext_resource type="PackedScene" uid="uid://7jsd463frso6" path="res://models/watchtower.gltf.glb" id="2_dq3v8"]
+
+[node name="towerTile" type="Node3D"]
+
+[node name="grassTileModel" parent="." instance=ExtResource("1_eojja")]
+
+[node name="towerModel" parent="grassTileModel" instance=ExtResource("2_dq3v8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

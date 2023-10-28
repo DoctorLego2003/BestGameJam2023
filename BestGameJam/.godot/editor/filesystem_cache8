@@ -1,4 +1,39 @@
 ea4bc82a6ad023ab7ee23ee620429895
+<<<<<<< HEAD
+::res://::1698478112
+icon.svg::CompressedTexture2D::9188040950633884421::1698429328::1698437494::1::::<><>::
+unit_hex.glb::PackedScene::5562328385902768438::1698478112::1698478115::1::::<><>::
+world.tscn::PackedScene::-1::1698478112::0::1::::<><>::
+::res://models/::1698477835
+castle.gltf.glb::PackedScene::4550373499631286139::1698438649::1698477005::1::::<><>::
+detail_forestA.gltf.glb::PackedScene::807951595888084271::1698438649::1698439901::1::::<><>::
+detail_forestB.gltf.glb::PackedScene::8481276620772104201::1698438649::1698439921::1::::<><>::
+hex_forest_detail.gltf.glb::PackedScene::7469089847053773436::1698438657::1698439800::1::::<><>::
+watchtower.gltf.glb::PackedScene::2265722231800739419::1698438650::1698477835::1::::<><>::
+::res://models/roads/::1698440093
+hex_forest_roadA_detail.gltf.glb::PackedScene::7295645432297390410::1698438657::1698440091::1::::<><>::
+hex_forest_roadB_detail.gltf.glb::PackedScene::1853501054690702614::1698438657::1698440091::1::::<><>::
+hex_forest_roadC_detail.gltf.glb::PackedScene::1729443549323966185::1698438657::1698440091::1::::<><>::
+hex_forest_roadD_detail.gltf.glb::PackedScene::4824480632162411743::1698438657::1698440091::1::::<><>::
+hex_forest_roadE_detail.gltf.glb::PackedScene::8474270524891376095::1698438657::1698440092::1::::<><>::
+hex_forest_roadF_detail.gltf.glb::PackedScene::3192089606871732943::1698438657::1698440092::1::::<><>::
+hex_forest_roadG_detail.gltf.glb::PackedScene::7822970698733009601::1698438657::1698440092::1::::<><>::
+hex_forest_roadH_detail.gltf.glb::PackedScene::7888765516912176594::1698438657::1698440092::1::::<><>::
+hex_forest_roadI_detail.gltf.glb::PackedScene::8898118852457877778::1698438657::1698440093::1::::<><>::
+hex_forest_roadJ_detail.gltf.glb::PackedScene::5393594001280498129::1698438658::1698440093::1::::<><>::
+hex_forest_roadK_detail.gltf.glb::PackedScene::8121319920202243544::1698438658::1698440093::1::::<><>::
+hex_forest_roadL_detail.gltf.glb::PackedScene::192958746629821173::1698438658::1698440093::1::::<><>::
+hex_forest_roadM_detail.gltf.glb::PackedScene::7652591998475182239::1698438658::1698440093::1::::<><>::
+::res://scripts/::1698437523
+mapGenerator.gd::GDScript::-1::1698437523::0::1::::<>Node<>::
+::res://tiles/::1698477947
+forest_tile.tscn::PackedScene::5653650594064170656::1698439984::0::1::::<><>::uid://deoc23hvrgfrg
+grass_tile.tscn::PackedScene::6395192086997409679::1698439873::0::1::::<><>::uid://deoc23hvrgfrg
+castle_tile.tscn::PackedScene::2446009229821477454::1698477180::0::1::::<><>::uid://deoc23hvrgfrg::::res://models/hex_forest_detail.gltf.glb<>uid://b53h8swc31cxv::::res://models/castle.gltf.glb
+main.tscn::PackedScene::6893081239819129166::1698477785::0::1::::<><>::uid://ba34odlmbi2rq::::res://tiles/castle_tile.tscn<>uid://cy22iot1y0g3l::::res://tiles/road_straight.tscn<>uid://cmsw2f7yxnr5i::::res://tiles/forest_tile.tscn<>uid://cxd445q61e8v8::::res://tiles/grass_tile.tscn
+tower_tile.tscn::PackedScene::7315875362924786728::1698477947::0::1::::<><>::uid://deoc23hvrgfrg::::res://models/hex_forest_detail.gltf.glb<>uid://7jsd463frso6::::res://models/watchtower.gltf.glb
+road_straight.tscn::PackedScene::6514766225107096483::1698477153::0::1::::<><>::uid://1n35kwkif527::::res://models/roads/hex_forest_roadB_detail.gltf.glb
+=======
 ::res://::1698477035
 Hexgrid.gd::GDScript::-1::1698444588::0::1::::<>Node<>::
 HexTile.tscn::PackedScene::-1::1698476309::0::1::::<><>::
@@ -7,3 +42,4 @@ unit_hex.glb::PackedScene::-1::1698438742::1698438742::1::::<><>::
 world.tscn::PackedScene::-1::1698476309::0::1::::<><>::
 ::res://scripts/::1698476819
 mapGenerator.gd::GDScript::-1::1698476819::0::1::::<>Node<>::
+>>>>>>> 6c230eea245588b01aa74cf58d47c319783cd9bd

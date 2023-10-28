@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxd445q61e8v8"]
+
+[ext_resource type="PackedScene" uid="uid://deoc23hvrgfrg" path="res://models/hex_forest_detail.gltf.glb" id="1_8sb6g"]
+
+[node name="grassTile" type="Node3D"]
+
+[node name="grassTileModel" parent="." instance=ExtResource("1_8sb6g")]

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ba34odlmbi2rq"]
+
+[ext_resource type="PackedScene" uid="uid://deoc23hvrgfrg" path="res://models/hex_forest_detail.gltf.glb" id="1_3mkaw"]
+[ext_resource type="PackedScene" uid="uid://b53h8swc31cxv" path="res://models/castle.gltf.glb" id="2_8aksp"]
+
+[node name="castleTile" type="Node3D"]
+
+[node name="grassTileModel" parent="." instance=ExtResource("1_3mkaw")]
+
+[node name="castleModel" parent="grassTileModel" instance=ExtResource("2_8aksp")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
