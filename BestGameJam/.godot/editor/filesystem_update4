@@ -1,12 +1,6 @@
-res://scenes/other scenes/main.tscn
 res://scripts/enemy.gd
-res://scripts/enemySpawner.gd
-res://scenes/enemies/enemySpawner.tscn
+res://scenes/projectiles/arrow.tscn
+res://scripts/TowerScript.gd
+res://scenes/other scenes/main.tscn
 res://scenes/enemies/minion.tscn
-res://scenes/tiles/mountainTile.tscn
-res://scenes/tiles/roadIntersection.tscn
-res://scenes/tiles/forestTile.tscn
-res://scenes/tiles/castleTile.tscn
-res://scenes/tiles/waterHalfTile.tscn
-res://scenes/tiles/waterTile.tscn
-res://scenes/tiles/waterStraightTile.tscn
+res://scenes/tiles/tower.tscn

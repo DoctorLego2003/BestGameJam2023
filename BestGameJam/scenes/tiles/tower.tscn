@@ -24,7 +24,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1, 0)
 shape = SubResource("CylinderShape3D_b4lpd")
 
 [node name="TextEdit" type="TextEdit" parent="."]
-visible = false
 offset_right = 8.0
 offset_bottom = 8.0
 text = "Tower Tile:
@@ -33,10 +32,10 @@ editable = false
 drag_and_drop_selection_enabled = false
 script = ExtResource("3_0qn14")
 
-[node name="shooting range" type="Area3D" parent="."]
+[node name="aggro" type="Area3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="shooting range"]
-transform = Transform3D(7, 0, 0, 0, 0.8, 0, 0, 0, 7, 0, 0.5, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="aggro"]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0, 0.5, 0)
 shape = SubResource("CylinderShape3D_jkwrj")
 disabled = true
 

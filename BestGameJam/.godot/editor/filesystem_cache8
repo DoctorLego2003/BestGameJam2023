@@ -1,6 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1698510035
-::res://models/::1698519444
+::res://::1698531083
+::res://models/::1698531361
 ::res://models/basicTiles/::1698495618
 hex_forest_detail.gltf.glb::PackedScene::2051518675171909553::1698438657::1698495618::1::::<><>::
 ::res://models/details/::1698518424
@@ -16,6 +16,8 @@ watchtower.gltf.glb::PackedScene::3557999795032521751::1698438650::1698495617::1
 ::res://models/enemies/::1698495617
 character_skeleton_minion.gltf::PackedScene::8851479773698239293::1698482992::1698495617::1::::<><>::
 character_skeleton_minion_broken.gltf::PackedScene::9212513382923784379::1698482992::1698495616::1::::<><>::
+::res://models/projectiles/::1698531364
+arrow_green.gltf.glb::PackedScene::326789701473659361::1698482989::1698531385::1::::<><>::
 ::res://models/roadTiles/::1698495616
 hex_forest_roadA_detail.gltf.glb::PackedScene::3864891998902762735::1698438657::1698495616::1::::<><>::
 hex_forest_roadB_detail.gltf.glb::PackedScene::487609916805162923::1698438657::1698495615::1::::<><>::
@@ -30,7 +32,7 @@ hex_forest_roadJ_detail.gltf.glb::PackedScene::2099898062196578314::1698438658::
 hex_forest_roadK_detail.gltf.glb::PackedScene::7742965862678224191::1698438658::1698495613::1::::<><>::
 hex_forest_roadL_detail.gltf.glb::PackedScene::9144207177870504339::1698438658::1698495613::1::::<><>::
 hex_forest_roadM_detail.gltf.glb::PackedScene::6412709929791789853::1698438658::1698495613::1::::<><>::
-::res://models/waterTiles/::1698520187
+::res://models/waterTiles/::1698520236
 hex_forest_waterA_detail.gltf.glb::PackedScene::6697032766052953648::1698438658::1698519478::1::::<><>::
 hex_forest_waterA_empty.gltf.glb::PackedScene::2584401933920023577::1698438658::1698519478::1::::<><>::
 hex_forest_waterB_detail.gltf.glb::PackedScene::4527814054383976658::1698438658::1698519479::1::::<><>::
@@ -42,28 +44,29 @@ hex_forest_waterD_empty.gltf.glb::PackedScene::1041489895188251704::1698438658::
 hex_water.gltf.glb::PackedScene::3549919772226005485::1698438660::1698520236::1::::<><>::
 hex_water_detail.gltf.glb::PackedScene::2595818578878641614::1698438660::1698520236::1::::<><>::
 ::res://scenes/::1698501038
-::res://scenes/enemies/::1698520146
+::res://scenes/enemies/::1698526141
 enemySpawner.tscn::PackedScene::5766857140360073091::1698520145::0::1::::<><>::res://scripts/enemySpawner.gd<>uid://s14iw0cm8fwl::::res://scenes/enemies/minion.tscn
-minion.tscn::PackedScene::1318849280473627731::1698520146::0::1::::<><>::res://scripts/enemy.gd<>uid://dydytw6qc3j38::::res://models/enemies/character_skeleton_minion.gltf
-::res://scenes/other scenes/::1698520146
-main.tscn::PackedScene::7853796982906456690::1698520146::0::1::::<><>::uid://cx0ujfawpqsd7::::res://scenes/tiles/forestTile.tscn<>uid://qq4k2ipct0lr::::res://scenes/tiles/grassTile.tscn<>uid://jym3w5nrs6mt::::res://scenes/tiles/hillTile.tscn<>uid://b6j2a7fdoyv6b::::res://scenes/tiles/roadStraightTile.tscn<>uid://bfce68ywdxylc::::res://scenes/tiles/roadCurve60Tile.tscn<>uid://cu0rohy28ql3d::::res://scenes/tiles/houseTile.tscn<>uid://cofpkpus0dykk::::res://scenes/tiles/roadEndTile.tscn<>uid://de0fhsi1a7hpd::::res://scenes/tiles/roadIntersection.tscn<>uid://b7wkudwqejkhq::::res://scenes/tiles/tower.tscn<>uid://cpr6fk6i5dqh::::res://scenes/other scenes/path.tscn<>uid://b2hgbvaywgkvd::::res://scenes/tiles/mountainTile.tscn<>uid://cofrkareixyud::::res://scenes/enemies/enemySpawner.tscn<>uid://ckt0jbehov24g::::res://scenes/tiles/castleTile.tscn<>uid://6te2cmysfm7y::::res://scenes/tiles/waterTile.tscn<>uid://b5grntren6x80::::res://scenes/tiles/waterHalfTile.tscn<>uid://c71cl0w5r40nb::::res://scenes/tiles/waterStraightTile.tscn
+minion.tscn::PackedScene::1318849280473627731::1698526141::0::1::::<><>::res://scripts/enemy.gd<>uid://dydytw6qc3j38::::res://models/enemies/character_skeleton_minion.gltf
+::res://scenes/other scenes/::1698526141
+main.tscn::PackedScene::7853796982906456690::1698526141::0::1::::<><>::uid://cx0ujfawpqsd7::::res://scenes/tiles/forestTile.tscn<>uid://qq4k2ipct0lr::::res://scenes/tiles/grassTile.tscn<>uid://jym3w5nrs6mt::::res://scenes/tiles/hillTile.tscn<>uid://b6j2a7fdoyv6b::::res://scenes/tiles/roadStraightTile.tscn<>uid://bfce68ywdxylc::::res://scenes/tiles/roadCurve60Tile.tscn<>uid://cu0rohy28ql3d::::res://scenes/tiles/houseTile.tscn<>uid://cofpkpus0dykk::::res://scenes/tiles/roadEndTile.tscn<>uid://de0fhsi1a7hpd::::res://scenes/tiles/roadIntersection.tscn<>uid://b7wkudwqejkhq::::res://scenes/tiles/tower.tscn<>uid://cpr6fk6i5dqh::::res://scenes/other scenes/path.tscn<>uid://b2hgbvaywgkvd::::res://scenes/tiles/mountainTile.tscn<>uid://cofrkareixyud::::res://scenes/enemies/enemySpawner.tscn<>uid://ckt0jbehov24g::::res://scenes/tiles/castleTile.tscn<>uid://6te2cmysfm7y::::res://scenes/tiles/watercornerTile.tscn<>uid://b5grntren6x80::::res://scenes/tiles/waterHalfTile.tscn<>uid://bcfumbms1f5ea::::res://scenes/tiles/waterTile.tscn
 path.tscn::PackedScene::172431181560209923::1698506504::0::1::::<><>::
-::res://scenes/tiles/::1698520146
+::res://scenes/tiles/::1698526141
 castleTile.tscn::PackedScene::5515487037098149428::1698520146::0::1::::<><>::uid://4h1hib3ndbw0::::res://models/basicTiles/hex_forest_detail.gltf.glb<>uid://0lro12nlymd5::::res://models/details/castle.gltf.glb<>res://scripts/CastleText.gd
 forestTile.tscn::PackedScene::6440024890549939582::1698520146::0::1::::<><>::uid://4h1hib3ndbw0::::res://models/basicTiles/hex_forest_detail.gltf.glb<>uid://c8vitilgmrdqo::::res://models/details/detail_forestA.gltf.glb<>res://scripts/ForestText.gd
 grassTile.tscn::PackedScene::1157831624176620291::1698501504::0::1::::<><>::uid://4h1hib3ndbw0
 hillTile.tscn::PackedScene::682024467454218343::1698516700::0::1::::<><>::uid://4h1hib3ndbw0
 houseTile.tscn::PackedScene::6229285280000297687::1698516700::0::1::::<><>::uid://4h1hib3ndbw0
 mountainTile.tscn::PackedScene::4296337298059348229::1698520146::0::1::::<><>::uid://daoixh8p7bvfl::::res://models/details/mountain.gltf.glb<>uid://4h1hib3ndbw0::::res://models/basicTiles/hex_forest_detail.gltf.glb
-waterStraightTile.tscn::PackedScene::7072700611583679703::1698520146::0::1::::<><>::uid://b5rko27y0m0li::::res://models/waterTiles/hex_forest_waterB_detail.gltf.glb
-waterHalfTile.tscn::PackedScene::4505528687961912799::1698520146::0::1::::<><>::uid://bckfe48em748s::::res://models/waterTiles/hex_forest_waterD_detail.gltf.glb
-waterTile.tscn::PackedScene::2215368539211706704::1698520146::0::1::::<><>::uid://c2odfe2c535o3::::res://models/waterTiles/hex_forest_waterA_detail.gltf.glb
-roadIntersection.tscn::PackedScene::7491943913965418973::1698520146::0::1::::<><>::uid://dpoxjf4irmbq::::res://models/roadTiles/hex_forest_roadE_detail.gltf.glb
 roadCurve30Tile.tscn::PackedScene::3792536922116421180::1698501504::0::1::::<><>::uid://btp4b1lb42mq1
 roadCurve60Tile.tscn::PackedScene::2741793656323881344::1698516700::0::1::::<><>::uid://ws1agg5s0rru
 roadEndTile.tscn::PackedScene::5766736499517232806::1698516700::0::1::::<><>::uid://bvcgha1ny7uwt
+roadIntersection.tscn::PackedScene::7491943913965418973::1698520146::0::1::::<><>::uid://dpoxjf4irmbq::::res://models/roadTiles/hex_forest_roadE_detail.gltf.glb
 roadStraightTile.tscn::PackedScene::4582495283690547763::1698506504::0::1::::<><>::uid://g7g4m5fl0srj
 tower.tscn::PackedScene::4678523068793640238::1698516700::0::1::::<><>::uid://4h1hib3ndbw0
+watercornerTile.tscn::PackedScene::2215368539211706704::1698520146::0::1::::<><>::uid://c2odfe2c535o3::::res://models/waterTiles/hex_forest_waterA_detail.gltf.glb
+waterHalfTile.tscn::PackedScene::4505528687961912799::1698520146::0::1::::<><>::uid://bckfe48em748s::::res://models/waterTiles/hex_forest_waterD_detail.gltf.glb
+waterStraightTile.tscn::PackedScene::7072700611583679703::1698520146::0::1::::<><>::uid://b5rko27y0m0li::::res://models/waterTiles/hex_forest_waterB_detail.gltf.glb
+waterTile.tscn::PackedScene::2538356101035469576::1698526141::0::1::::<><>::uid://bqtuwo7ue8q0t::::res://models/waterTiles/hex_water.gltf.glb
 ::res://scripts/::1698516832
 CastleText.gd::GDScript::-1::1698499254::0::1::::<>TextEdit<>::
 enemy.gd::GDScript::-1::1698516832::0::1::::<>PathFollow3D<>::
