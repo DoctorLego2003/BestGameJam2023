@@ -1,4 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
+<<<<<<< HEAD
 ::res://::1698478112
 icon.svg::CompressedTexture2D::9188040950633884421::1698429328::1698437494::1::::<><>::
 unit_hex.glb::PackedScene::5562328385902768438::1698478112::1698478115::1::::<><>::
@@ -32,3 +33,13 @@ castle_tile.tscn::PackedScene::2446009229821477454::1698477180::0::1::::<><>::ui
 main.tscn::PackedScene::6893081239819129166::1698477785::0::1::::<><>::uid://ba34odlmbi2rq::::res://tiles/castle_tile.tscn<>uid://cy22iot1y0g3l::::res://tiles/road_straight.tscn<>uid://cmsw2f7yxnr5i::::res://tiles/forest_tile.tscn<>uid://cxd445q61e8v8::::res://tiles/grass_tile.tscn
 tower_tile.tscn::PackedScene::7315875362924786728::1698477947::0::1::::<><>::uid://deoc23hvrgfrg::::res://models/hex_forest_detail.gltf.glb<>uid://7jsd463frso6::::res://models/watchtower.gltf.glb
 road_straight.tscn::PackedScene::6514766225107096483::1698477153::0::1::::<><>::uid://1n35kwkif527::::res://models/roads/hex_forest_roadB_detail.gltf.glb
+=======
+::res://::1698477035
+Hexgrid.gd::GDScript::-1::1698444588::0::1::::<>Node<>::
+HexTile.tscn::PackedScene::-1::1698476309::0::1::::<><>::
+icon.svg::CompressedTexture2D::9188040950633884421::1698428771::1698428781::1::::<><>::
+unit_hex.glb::PackedScene::-1::1698438742::1698438742::1::::<><>::
+world.tscn::PackedScene::-1::1698476309::0::1::::<><>::
+::res://scripts/::1698476819
+mapGenerator.gd::GDScript::-1::1698476819::0::1::::<>Node<>::
+>>>>>>> 6c230eea245588b01aa74cf58d47c319783cd9bd
