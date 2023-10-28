@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cx0ujfawpqsd7"]
+
+[ext_resource type="PackedScene" uid="uid://4h1hib3ndbw0" path="res://models/basicTiles/hex_forest_detail.gltf.glb" id="1_x1fi5"]
+[ext_resource type="PackedScene" uid="uid://c8vitilgmrdqo" path="res://models/details/detail_forestA.gltf.glb" id="2_6ncnf"]
+
+[node name="forestTile" type="Node3D"]
+
+[node name="hex_forest_detail_gltf" parent="." instance=ExtResource("1_x1fi5")]
+
+[node name="detail_forestA_gltf" parent="." instance=ExtResource("2_6ncnf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

@@ -2,3 +2,5 @@ res://scenes/tiles/grassTile.tscn
 res://scenes/tiles/roadStraightTile.tscn
 res://scenes/tiles/tower.tscn
 res://scenes/tiles/castle.tscn
+res://scenes/tiles/forestTile.tscn
+res://scenes/tiles/roadCurve60Tile.tscn
