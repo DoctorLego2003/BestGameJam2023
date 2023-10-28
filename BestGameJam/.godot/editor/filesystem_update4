@@ -1,1 +1,7 @@
 res://tiles/road_straight.tscn
+res://tiles/main.tscn
+res://tiles/grass_tile.tscn
+res://tiles/forest_tile.tscn
+res://tiles/castle_tile.tscn
+res://tiles/tower_tile.tscn
+res://HexTile.tscn
