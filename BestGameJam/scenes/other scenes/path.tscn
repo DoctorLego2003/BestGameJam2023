@@ -10,6 +10,3 @@ point_count = 7
 [node name="Path3D" type="Path3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 curve = SubResource("Curve3D_6nscq")
-
-[node name="PathFollow3D" type="PathFollow3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
