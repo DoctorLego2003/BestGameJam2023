@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7wkudwqejkhq"]
+[gd_scene load_steps=5 format=3 uid="uid://b7wkudwqejkhq"]
 
 [ext_resource type="PackedScene" uid="uid://4h1hib3ndbw0" path="res://models/basicTiles/hex_forest_detail.gltf.glb" id="1_55ydr"]
 [ext_resource type="PackedScene" uid="uid://bqxr0by7hxxxf" path="res://models/details/watchtower.gltf.glb" id="2_nin5s"]
+[ext_resource type="Script" path="res://scripts/TowerText.gd" id="3_0qn14"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_b4lpd"]
 
 [node name="towerTile" type="Node3D"]
 
@@ -9,3 +12,17 @@
 
 [node name="watchtowerModel" parent="." instance=ExtResource("2_nin5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1, 0)
+shape = SubResource("CylinderShape3D_b4lpd")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("3_0qn14")
+
+[connection signal="input_event" from="Area3D" to="TextEdit" method="_on_area_3d_input_event"]
+[connection signal="mouse_exited" from="Area3D" to="TextEdit" method="_on_area_3d_mouse_exited"]
