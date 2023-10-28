@@ -6,5 +6,6 @@
 [node name="enemySpawner" type="Node3D"]
 script = ExtResource("1_xec3u")
 minion = ExtResource("2_y13oq")
-cooldownWave = 5
+cooldownWave = 2
 intervalSpawn = 0.5
+amountOfEnemies = 3
