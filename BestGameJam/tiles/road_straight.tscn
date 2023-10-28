@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cy22iot1y0g3l"]
+
+[ext_resource type="PackedScene" uid="uid://1n35kwkif527" path="res://models/roads/hex_forest_roadB_detail.gltf.glb" id="1_timux"]
+
+[node name="roadStraightTile" type="Node3D"]
+
+[node name="roadStraightTileModel" parent="." instance=ExtResource("1_timux")]
