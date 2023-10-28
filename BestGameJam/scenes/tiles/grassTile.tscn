@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://qq4k2ipct0lr"]
+
+[ext_resource type="PackedScene" uid="uid://4h1hib3ndbw0" path="res://models/basicTiles/hex_forest_detail.gltf.glb" id="1_wldlt"]
+
+[node name="grassTile" type="Node3D"]
+
+[node name="grassTileModel" parent="." instance=ExtResource("1_wldlt")]
+metadata/towerPlaceable = true
