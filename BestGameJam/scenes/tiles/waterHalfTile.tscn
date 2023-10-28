@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5grntren6x80"]
+
+[ext_resource type="PackedScene" uid="uid://bckfe48em748s" path="res://models/waterTiles/hex_forest_waterD_detail.gltf.glb" id="1_sn4qp"]
+
+[node name="waterHalfTile" type="Node3D"]
+
+[node name="waterHalfTileModel" parent="." instance=ExtResource("1_sn4qp")]

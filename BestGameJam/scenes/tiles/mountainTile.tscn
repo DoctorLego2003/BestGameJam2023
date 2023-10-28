@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2hgbvaywgkvd"]
+
+[ext_resource type="PackedScene" uid="uid://daoixh8p7bvfl" path="res://models/details/mountain.gltf.glb" id="1_rjf00"]
+[ext_resource type="PackedScene" uid="uid://4h1hib3ndbw0" path="res://models/basicTiles/hex_forest_detail.gltf.glb" id="2_4p263"]
+
+[node name="mountainTile" type="Node3D"]
+
+[node name="mountainTileModel" parent="." instance=ExtResource("1_rjf00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="grassTile" parent="." instance=ExtResource("2_4p263")]

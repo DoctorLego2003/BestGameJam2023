@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://de0fhsi1a7hpd"]
+
+[ext_resource type="PackedScene" uid="uid://dpoxjf4irmbq" path="res://models/roadTiles/hex_forest_roadE_detail.gltf.glb" id="1_3p1qn"]
+
+[node name="roadIntersection" type="Node3D"]
+
+[node name="roadIntersectionModel" parent="." instance=ExtResource("1_3p1qn")]
