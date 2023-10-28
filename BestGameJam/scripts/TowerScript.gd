@@ -7,6 +7,14 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	pass 
 
+func _get_drag_data(at_position):
+	return at_position
+
+func _can_drop_data(_pos, data):
+	return false
+
+func _drop_data(_pos, data):
+	pass
 
