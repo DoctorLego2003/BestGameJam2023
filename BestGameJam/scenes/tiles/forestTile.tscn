@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cx0ujfawpqsd7"]
+[gd_scene load_steps=3 format=3 uid="uid://cx550hqmryeyt"]
 
 [ext_resource type="PackedScene" uid="uid://4h1hib3ndbw0" path="res://models/basicTiles/hex_forest_detail.gltf.glb" id="1_x1fi5"]
 [ext_resource type="PackedScene" uid="uid://c8vitilgmrdqo" path="res://models/details/detail_forestA.gltf.glb" id="2_6ncnf"]

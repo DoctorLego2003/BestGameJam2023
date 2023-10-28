@@ -1,14 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://dj5o5hrsdftgc"]
 
-[ext_resource type="PackedScene" uid="uid://dramj5g4rflgm" path="res://scenes/tiles/castleTile.tscn" id="1_1xou3"]
-[ext_resource type="PackedScene" uid="uid://cx0ujfawpqsd7" path="res://scenes/tiles/forestTile.tscn" id="2_oo3ti"]
+[ext_resource type="PackedScene" uid="uid://bdsr7uai0eidr" path="res://scenes/tiles/castle.tscn" id="1_1xou3"]
+[ext_resource type="PackedScene" uid="uid://cx550hqmryeyt" path="res://scenes/tiles/forestTile.tscn" id="2_oo3ti"]
 [ext_resource type="PackedScene" uid="uid://qq4k2ipct0lr" path="res://scenes/tiles/grassTile.tscn" id="3_uccty"]
-[ext_resource type="PackedScene" uid="uid://jym3w5nrs6mt" path="res://scenes/tiles/hillTile.tscn" id="4_t3nv1"]
+[ext_resource type="PackedScene" uid="uid://yv2lkfamiwyo" path="res://scenes/tiles/hillTile.tscn" id="4_t3nv1"]
 
 [node name="main" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 9.53674e-07, 18.0515, 16.4412)
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 9.53674e-07, 7.0515, 12.4412)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0)
