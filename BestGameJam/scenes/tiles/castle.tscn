@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://kw0drm2d2lvw"]
+[gd_scene load_steps=5 format=3 uid="uid://vtv2h6tcpofg"]
 
 [ext_resource type="PackedScene" uid="uid://4h1hib3ndbw0" path="res://models/basicTiles/hex_forest_detail.gltf.glb" id="1_60esm"]
 [ext_resource type="PackedScene" uid="uid://0lro12nlymd5" path="res://models/details/castle.gltf.glb" id="2_ctxgy"]
@@ -11,9 +11,9 @@ metadata/towerPlaceable = false
 
 [node name="grassTileModel" parent="." instance=ExtResource("1_60esm")]
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="CastleArea" type="Area3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CastleArea"]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 1, 0)
 shape = SubResource("CylinderShape3D_2cy0f")
 
@@ -31,5 +31,5 @@ Enemies shouldn't get here.
 "
 script = ExtResource("3_bhy1t")
 
-[connection signal="input_event" from="Area3D" to="TextEdit" method="_on_area_3d_input_event"]
-[connection signal="mouse_exited" from="Area3D" to="TextEdit" method="_on_area_3d_mouse_exited"]
+[connection signal="input_event" from="CastleArea" to="TextEdit" method="_on_area_3d_input_event"]
+[connection signal="mouse_exited" from="CastleArea" to="TextEdit" method="_on_area_3d_mouse_exited"]

@@ -11,9 +11,9 @@ metadata/towerPlaceable = false
 
 [node name="grassTileModel" parent="." instance=ExtResource("1_60esm")]
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="CastleArea" type="Area3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CastleArea"]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 1, 0)
 shape = SubResource("CylinderShape3D_2cy0f")
 
@@ -28,5 +28,5 @@ editable = false
 drag_and_drop_selection_enabled = false
 script = ExtResource("3_bhy1t")
 
-[connection signal="input_event" from="Area3D" to="TextEdit" method="_on_area_3d_input_event"]
-[connection signal="mouse_exited" from="Area3D" to="TextEdit" method="_on_area_3d_mouse_exited"]
+[connection signal="input_event" from="CastleArea" to="TextEdit" method="_on_area_3d_input_event"]
+[connection signal="mouse_exited" from="CastleArea" to="TextEdit" method="_on_area_3d_mouse_exited"]

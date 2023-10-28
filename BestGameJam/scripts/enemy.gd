@@ -9,4 +9,11 @@ func _process(delta):
 	
 func move(delta):
 	self.progress += delta * speed
-	
+
+
+func _on_area_3d_area_entered(area):
+	var main = get_node("/root/main")
+	if (area.name == "CastleArea"):
+		var newLives = main.get_meta('Lives') - 1
+		main.set_meta("Lives", newLives)
+		get_parent().remove_child(self)
