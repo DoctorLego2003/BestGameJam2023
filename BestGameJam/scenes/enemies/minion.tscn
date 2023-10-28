@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://s14iw0cm8fwl"]
+
+[ext_resource type="PackedScene" uid="uid://dydytw6qc3j38" path="res://models/enemies/character_skeleton_minion.gltf" id="1_o0by6"]
+
+[node name="minion" type="Node3D"]
+
+[node name="character_skeleton_minion" parent="." instance=ExtResource("1_o0by6")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)

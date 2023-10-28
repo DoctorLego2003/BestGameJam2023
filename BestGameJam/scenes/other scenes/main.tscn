@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dj5o5hrsdftgc"]
+[gd_scene load_steps=11 format=3 uid="uid://dj5o5hrsdftgc"]
 
 [ext_resource type="PackedScene" uid="uid://kw0drm2d2lvw" path="res://scenes/tiles/castle.tscn" id="1_1xou3"]
 [ext_resource type="PackedScene" uid="uid://cx550hqmryeyt" path="res://scenes/tiles/forestTile.tscn" id="2_oo3ti"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://b6j2a7fdoyv6b" path="res://scenes/tiles/roadStraightTile.tscn" id="5_5knf4"]
 [ext_resource type="PackedScene" uid="uid://dq1rs8ykdo01e" path="res://scenes/tiles/roadCurve60Tile.tscn" id="6_w1agn"]
 [ext_resource type="PackedScene" uid="uid://cu0rohy28ql3d" path="res://scenes/tiles/houseTile.tscn" id="7_cc6dc"]
+[ext_resource type="PackedScene" uid="uid://cofpkpus0dykk" path="res://scenes/tiles/roadEndTile.tscn" id="8_nxxtm"]
+[ext_resource type="PackedScene" uid="uid://cpr6fk6i5dqh" path="res://scenes/other scenes/path.tscn" id="9_x2yvr"]
+[ext_resource type="PackedScene" uid="uid://s14iw0cm8fwl" path="res://scenes/enemies/minion.tscn" id="10_gf0i1"]
 
 [node name="main" type="Node3D"]
 
@@ -109,3 +112,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -1.732)
 
 [node name="houseTile" parent="gameboard" instance=ExtResource("7_cc6dc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+
+[node name="roadEndTile" parent="gameboard" instance=ExtResource("8_nxxtm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -5.196)
+
+[node name="Path3D" parent="." instance=ExtResource("9_x2yvr")]
+
+[node name="minion" parent="." instance=ExtResource("10_gf0i1")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 1, -5.196)
