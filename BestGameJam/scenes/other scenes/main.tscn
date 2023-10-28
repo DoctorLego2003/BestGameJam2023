@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dj5o5hrsdftgc"]
+[gd_scene load_steps=10 format=3 uid="uid://dj5o5hrsdftgc"]
 
 [ext_resource type="PackedScene" uid="uid://dramj5g4rflgm" path="res://scenes/tiles/castleTile.tscn" id="1_1xou3"]
 [ext_resource type="PackedScene" uid="uid://cx0ujfawpqsd7" path="res://scenes/tiles/forestTile.tscn" id="2_oo3ti"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://b6j2a7fdoyv6b" path="res://scenes/tiles/roadStraightTile.tscn" id="5_5knf4"]
 [ext_resource type="PackedScene" uid="uid://bfce68ywdxylc" path="res://scenes/tiles/roadCurve60Tile.tscn" id="6_w1agn"]
 [ext_resource type="PackedScene" uid="uid://bljdur3g47tc4" path="res://scenes/tiles/houseTile.tscn" id="7_cc6dc"]
+[ext_resource type="PackedScene" uid="uid://cofpkpus0dykk" path="res://scenes/tiles/roadEndTile.tscn" id="8_nxxtm"]
+[ext_resource type="PackedScene" uid="uid://cpr6fk6i5dqh" path="res://scenes/other scenes/path.tscn" id="9_x2yvr"]
 
 [node name="main" type="Node3D"]
 
@@ -109,3 +111,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -1.732)
 
 [node name="houseTile" parent="gameboard" instance=ExtResource("7_cc6dc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+
+[node name="roadEndTile" parent="gameboard" instance=ExtResource("8_nxxtm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -5.196)
+
+[node name="Path3D" parent="." instance=ExtResource("9_x2yvr")]
