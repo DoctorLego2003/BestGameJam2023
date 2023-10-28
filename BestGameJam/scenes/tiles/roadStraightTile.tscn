@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6j2a7fdoyv6b"]
+
+[ext_resource type="PackedScene" uid="uid://g7g4m5fl0srj" path="res://models/roadTiles/hex_forest_roadB_detail.gltf.glb" id="1_ew1qn"]
+
+[node name="roadStraightTile" type="Node3D"]
+
+[node name="hex_forest_roadB_detail_gltf" parent="." instance=ExtResource("1_ew1qn")]
+metadata/towerPlaceable = false
