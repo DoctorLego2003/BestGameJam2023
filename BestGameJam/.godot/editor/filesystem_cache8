@@ -1,7 +1,9 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1698476829
+::res://::1698478112
 icon.svg::CompressedTexture2D::9188040950633884421::1698429328::1698437494::1::::<><>::
-::res://models/::1698477832
+unit_hex.glb::PackedScene::5562328385902768438::1698478112::1698478115::1::::<><>::
+world.tscn::PackedScene::-1::1698478112::0::1::::<><>::
+::res://models/::1698477835
 castle.gltf.glb::PackedScene::4550373499631286139::1698438649::1698477005::1::::<><>::
 detail_forestA.gltf.glb::PackedScene::807951595888084271::1698438649::1698439901::1::::<><>::
 detail_forestB.gltf.glb::PackedScene::8481276620772104201::1698438649::1698439921::1::::<><>::
@@ -23,9 +25,10 @@ hex_forest_roadL_detail.gltf.glb::PackedScene::192958746629821173::1698438658::1
 hex_forest_roadM_detail.gltf.glb::PackedScene::7652591998475182239::1698438658::1698440093::1::::<><>::
 ::res://scripts/::1698437523
 mapGenerator.gd::GDScript::-1::1698437523::0::1::::<>Node<>::
-::res://tiles/::1698477785
+::res://tiles/::1698477947
 forest_tile.tscn::PackedScene::5653650594064170656::1698439984::0::1::::<><>::uid://deoc23hvrgfrg
 grass_tile.tscn::PackedScene::6395192086997409679::1698439873::0::1::::<><>::uid://deoc23hvrgfrg
 castle_tile.tscn::PackedScene::2446009229821477454::1698477180::0::1::::<><>::uid://deoc23hvrgfrg::::res://models/hex_forest_detail.gltf.glb<>uid://b53h8swc31cxv::::res://models/castle.gltf.glb
 main.tscn::PackedScene::6893081239819129166::1698477785::0::1::::<><>::uid://ba34odlmbi2rq::::res://tiles/castle_tile.tscn<>uid://cy22iot1y0g3l::::res://tiles/road_straight.tscn<>uid://cmsw2f7yxnr5i::::res://tiles/forest_tile.tscn<>uid://cxd445q61e8v8::::res://tiles/grass_tile.tscn
+tower_tile.tscn::PackedScene::7315875362924786728::1698477947::0::1::::<><>::uid://deoc23hvrgfrg::::res://models/hex_forest_detail.gltf.glb<>uid://7jsd463frso6::::res://models/watchtower.gltf.glb
 road_straight.tscn::PackedScene::6514766225107096483::1698477153::0::1::::<><>::uid://1n35kwkif527::::res://models/roads/hex_forest_roadB_detail.gltf.glb
