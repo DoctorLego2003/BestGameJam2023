@@ -1,5 +1,7 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1698437504
-icon.svg::CompressedTexture2D::9188040950633884421::1698429328::1698437494::1::::<><>::
-::res://scripts/::1698437504
-mapGenerator.gd::GDScript::-1::1698437523::0::1::::<>Node<>::
+::res://::1698476299
+Hexgrid.gd::GDScript::-1::1698444588::0::1::::<>Node<>::
+HexTile.tscn::PackedScene::7848390781140150316::1698444707::0::1::::<><>::uid://clio0av3eye8e::::res://unit_hex.glb
+icon.svg::CompressedTexture2D::9188040950633884421::1698428771::1698428781::1::::<><>::
+unit_hex.glb::PackedScene::5562328385902768438::1698438742::1698438742::1::::<><>::
+world.tscn::PackedScene::219165331014662556::1698444707::0::1::::<><>::res://Hexgrid.gd
