@@ -5,12 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://qq4k2ipct0lr" path="res://scenes/tiles/grassTile.tscn" id="3_uccty"]
 [ext_resource type="PackedScene" uid="uid://yv2lkfamiwyo" path="res://scenes/tiles/hillTile.tscn" id="4_t3nv1"]
 [ext_resource type="PackedScene" uid="uid://b6j2a7fdoyv6b" path="res://scenes/tiles/roadStraightTile.tscn" id="5_5knf4"]
-[ext_resource type="PackedScene" uid="uid://dq1rs8ykdo01e" path="res://scenes/tiles/roadCurve60Tile.tscn" id="6_w1agn"]
+[ext_resource type="PackedScene" uid="uid://bfce68ywdxylc" path="res://scenes/tiles/roadCurve60Tile.tscn" id="6_w1agn"]
 [ext_resource type="PackedScene" uid="uid://cu0rohy28ql3d" path="res://scenes/tiles/houseTile.tscn" id="7_cc6dc"]
-[ext_resource type="PackedScene" uid="uid://ufv28yvahdds" path="res://scenes/tiles/roadEndTile.tscn" id="8_nxxtm"]
+[ext_resource type="PackedScene" uid="uid://cofpkpus0dykk" path="res://scenes/tiles/roadEndTile.tscn" id="8_nxxtm"]
 [ext_resource type="PackedScene" uid="uid://b7wkudwqejkhq" path="res://scenes/tiles/tower.tscn" id="9_tn1iv"]
 [ext_resource type="PackedScene" uid="uid://cpr6fk6i5dqh" path="res://scenes/other scenes/path.tscn" id="9_x2yvr"]
-[ext_resource type="PackedScene" uid="uid://s14iw0cm8fwl" path="res://scenes/enemies/minion.tscn" id="10_gf0i1"]
+[ext_resource type="PackedScene" uid="uid://cofrkareixyud" path="res://scenes/enemies/enemySpawner.tscn" id="11_8jhl8"]
 
 [node name="main" type="Node3D"]
 
@@ -120,7 +120,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -5.196)
 [node name="towerTile" parent="gameboard" instance=ExtResource("9_tn1iv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -5.196)
 
-[node name="Path3D" parent="." instance=ExtResource("9_x2yvr")]
+[node name="enemySpawner" parent="." instance=ExtResource("11_8jhl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -5.196)
 
-[node name="minion" parent="Path3D" instance=ExtResource("10_gf0i1")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 0, -5.196)
+[node name="path" parent="enemySpawner" instance=ExtResource("9_x2yvr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 5.196)

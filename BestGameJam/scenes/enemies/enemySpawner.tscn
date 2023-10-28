@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://cofrkareixyud"]
+[gd_scene load_steps=3 format=3 uid="uid://cofrkareixyud"]
+
+[ext_resource type="Script" path="res://scripts/enemySpawner.gd" id="1_xec3u"]
+[ext_resource type="PackedScene" uid="uid://s14iw0cm8fwl" path="res://scenes/enemies/minion.tscn" id="2_y13oq"]
 
 [node name="enemySpawner" type="Node3D"]
+script = ExtResource("1_xec3u")
+minion = ExtResource("2_y13oq")
+cooldownWave = 5
+intervalSpawn = 0.5
