@@ -1,8 +1,8 @@
-extends PathFollow3D, BoxShape3D
+extends PathFollow3D
 
-@export var health : int
-@export var speed : int
-@export var damage : int
+@export var health : int = 2
+@export var speed : int = 2
+@export var damage : int = 1
 
 func _process(delta):
 	move(delta)
