@@ -1,14 +1,12 @@
-extends Node
+extends PathFollow3D
 
 @export var health : int
 @export var speed : int
 @export var damage : int
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	move(delta)
+	
+func move(delta):
+	self.progress += delta * speed
+	
