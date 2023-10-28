@@ -1,4 +1,9 @@
-[gd_scene format=3 uid="uid://dj5o5hrsdftgc"]
+[gd_scene load_steps=5 format=3 uid="uid://dj5o5hrsdftgc"]
+
+[ext_resource type="PackedScene" uid="uid://dramj5g4rflgm" path="res://scenes/tiles/castleTile.tscn" id="1_1xou3"]
+[ext_resource type="PackedScene" uid="uid://cx0ujfawpqsd7" path="res://scenes/tiles/forestTile.tscn" id="2_oo3ti"]
+[ext_resource type="PackedScene" uid="uid://qq4k2ipct0lr" path="res://scenes/tiles/grassTile.tscn" id="3_uccty"]
+[ext_resource type="PackedScene" uid="uid://jym3w5nrs6mt" path="res://scenes/tiles/hillTile.tscn" id="4_t3nv1"]
 
 [node name="main" type="Node3D"]
 
@@ -8,5 +13,36 @@ transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0)
 light_color = Color(0.933333, 0.831373, 0.631373, 1)
-light_energy = 180.0
+light_energy = 50.0
 omni_range = 4096.0
+
+[node name="gameboard" type="Node3D" parent="."]
+
+[node name="castleTile" parent="gameboard" instance=ExtResource("1_1xou3")]
+
+[node name="forestTile" parent="gameboard" instance=ExtResource("2_oo3ti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1.732)
+
+[node name="grassTile" parent="gameboard" instance=ExtResource("3_uccty")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 1.732)
+
+[node name="grassTile5" parent="gameboard" instance=ExtResource("3_uccty")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 1.732)
+
+[node name="grassTile6" parent="gameboard" instance=ExtResource("3_uccty")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 1.732)
+
+[node name="grassTile3" parent="gameboard" instance=ExtResource("3_uccty")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -1.732)
+
+[node name="grassTile4" parent="gameboard" instance=ExtResource("3_uccty")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -1.732)
+
+[node name="grassTile2" parent="gameboard" instance=ExtResource("3_uccty")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1.732)
+
+[node name="hillTile" parent="gameboard" instance=ExtResource("4_t3nv1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1.732)
+
+[node name="hillTile2" parent="gameboard" instance=ExtResource("4_t3nv1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -1.732)

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfce68ywdxylc"]
+
+[ext_resource type="PackedScene" uid="uid://ws1agg5s0rru" path="res://models/roadTiles/hex_forest_roadD_detail.gltf.glb" id="1_r5m2c"]
+
+[node name="roadCurve60Tile" type="Node3D"]
+
+[node name="roadCurve60Tile" parent="." instance=ExtResource("1_r5m2c")]
