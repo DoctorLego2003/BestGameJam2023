@@ -17,8 +17,15 @@ transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0.5, 0)
 shape = SubResource("CylinderShape3D_efjdy")
 
 [node name="TextEdit" type="TextEdit" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+visible = false
+offset_left = 869.0
+offset_top = 578.0
+offset_right = 1150.0
+offset_bottom = 646.0
+text = "Grass Tile:
+There is enough place for a tower."
+editable = false
+drag_and_drop_selection_enabled = false
 script = ExtResource("2_tsfnl")
 
 [connection signal="input_event" from="Area3D" to="TextEdit" method="_on_area_3d_input_event"]

@@ -17,8 +17,16 @@ transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0.5, 0)
 shape = SubResource("CylinderShape3D_8b1qr")
 
 [node name="TextEdit" type="TextEdit" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+visible = false
+offset_left = 914.0
+offset_top = 578.0
+offset_right = 1152.0
+offset_bottom = 647.0
+text = "Road Tile:
+Beware of traveling enemies!"
+editable = false
+drag_and_drop_selection_enabled = false
 script = ExtResource("2_533l7")
 
 [connection signal="input_event" from="Area3D" to="TextEdit" method="_on_area_3d_input_event"]
+[connection signal="mouse_exited" from="Area3D" to="TextEdit" method="_on_area_3d_mouse_exited"]
