@@ -7,14 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://b6j2a7fdoyv6b" path="res://scenes/tiles/roadStraightTile.tscn" id="5_5knf4"]
 [ext_resource type="PackedScene" uid="uid://bfce68ywdxylc" path="res://scenes/tiles/roadCurve60Tile.tscn" id="6_w1agn"]
 [ext_resource type="PackedScene" uid="uid://bljdur3g47tc4" path="res://scenes/tiles/houseTile.tscn" id="7_cc6dc"]
-<<<<<<< HEAD
+
 [ext_resource type="PackedScene" uid="uid://cofpkpus0dykk" path="res://scenes/tiles/roadEndTile.tscn" id="8_nxxtm"]
 [ext_resource type="PackedScene" uid="uid://b7wkudwqejkhq" path="res://scenes/tiles/tower.tscn" id="9_tn1iv"]
 [ext_resource type="PackedScene" uid="uid://cpr6fk6i5dqh" path="res://scenes/other scenes/path.tscn" id="9_x2yvr"]
-=======
-[ext_resource type="PackedScene" uid="uid://ufv28yvahdds" path="res://scenes/tiles/roadEndTile.tscn" id="8_nxxtm"]
-[ext_resource type="PackedScene" path="res://scenes/other scenes/path.tscn" id="9_x2yvr"]
->>>>>>> 2a790466eabe1ce60bd4b86994e33fdf4a43238e
+
 [ext_resource type="PackedScene" uid="uid://s14iw0cm8fwl" path="res://scenes/enemies/minion.tscn" id="10_gf0i1"]
 
 [node name="main" type="Node3D"]
