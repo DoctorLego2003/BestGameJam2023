@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://yv2lkfamiwyo"]
+[gd_scene load_steps=5 format=3 uid="uid://yv2lkfamiwyo"]
 
 [ext_resource type="PackedScene" uid="uid://4h1hib3ndbw0" path="res://models/basicTiles/hex_forest_detail.gltf.glb" id="1_axi4l"]
 [ext_resource type="PackedScene" path="res://models/details/detail_hill.gltf.glb" id="2_kpjf8"]
+[ext_resource type="Script" path="res://scripts/HillText.gd" id="3_sivwr"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jhr38"]
 
 [node name="hillTile" type="Node3D"]
 
@@ -9,3 +12,24 @@
 
 [node name="hillModel" parent="." instance=ExtResource("2_kpjf8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0.5, 0)
+shape = SubResource("CylinderShape3D_jhr38")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+visible = false
+offset_left = 943.0
+offset_top = 581.0
+offset_right = 1154.0
+offset_bottom = 650.0
+text = "Hill Tile:
+There is a hill in the way."
+editable = false
+drag_and_drop_selection_enabled = false
+script = ExtResource("3_sivwr")
+
+[connection signal="input_event" from="Area3D" to="TextEdit" method="_on_area_3d_input_event"]
+[connection signal="mouse_exited" from="Area3D" to="TextEdit" method="_on_area_3d_mouse_exited"]

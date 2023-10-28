@@ -1,7 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://dq1rs8ykdo01e"]
+[gd_scene load_steps=4 format=3 uid="uid://dq1rs8ykdo01e"]
 
 [ext_resource type="PackedScene" uid="uid://ws1agg5s0rru" path="res://models/roadTiles/hex_forest_roadD_detail.gltf.glb" id="1_r5m2c"]
+[ext_resource type="Script" path="res://scripts/RoadText.gd" id="2_o6vqw"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_qlh1m"]
 
 [node name="roadCurve60Tile" type="Node3D"]
 
 [node name="roadCurve60Tile" parent="." instance=ExtResource("1_r5m2c")]
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0.5, 0)
+shape = SubResource("CylinderShape3D_qlh1m")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+visible = false
+offset_left = 914.0
+offset_top = 578.0
+offset_right = 1152.0
+offset_bottom = 647.0
+text = "Road Tile:
+Beware of traveling enemies!"
+editable = false
+drag_and_drop_selection_enabled = false
+script = ExtResource("2_o6vqw")
+
+[connection signal="input_event" from="Area3D" to="TextEdit" method="_on_area_3d_input_event"]
+[connection signal="mouse_exited" from="Area3D" to="TextEdit" method="_on_area_3d_mouse_exited"]

@@ -20,8 +20,13 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1, 0)
 shape = SubResource("CylinderShape3D_b4lpd")
 
 [node name="TextEdit" type="TextEdit" parent="."]
+visible = false
 offset_right = 8.0
 offset_bottom = 8.0
+text = "Tower Tile:
+Get it to the front lines!"
+editable = false
+drag_and_drop_selection_enabled = false
 script = ExtResource("3_0qn14")
 
 [connection signal="input_event" from="Area3D" to="TextEdit" method="_on_area_3d_input_event"]

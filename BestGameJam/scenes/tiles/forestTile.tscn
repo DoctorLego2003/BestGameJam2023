@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cx550hqmryeyt"]
+[gd_scene load_steps=5 format=3 uid="uid://cx550hqmryeyt"]
 
 [ext_resource type="PackedScene" uid="uid://4h1hib3ndbw0" path="res://models/basicTiles/hex_forest_detail.gltf.glb" id="1_x1fi5"]
 [ext_resource type="PackedScene" uid="uid://c8vitilgmrdqo" path="res://models/details/detail_forestA.gltf.glb" id="2_6ncnf"]
+[ext_resource type="Script" path="res://scripts/ForestText.gd" id="3_q0hqq"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_r53l6"]
 
 [node name="forestTile" type="Node3D"]
 
@@ -9,3 +12,24 @@
 
 [node name="detail_forestA_gltf" parent="." instance=ExtResource("2_6ncnf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0.5, 0)
+shape = SubResource("CylinderShape3D_r53l6")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+visible = false
+offset_left = 846.0
+offset_top = 576.0
+offset_right = 1154.0
+offset_bottom = 650.0
+text = "Forest Tile:
+There are too many trees for towers."
+editable = false
+drag_and_drop_selection_enabled = false
+script = ExtResource("3_q0hqq")
+
+[connection signal="input_event" from="Area3D" to="TextEdit" method="_on_area_3d_input_event"]
+[connection signal="mouse_exited" from="Area3D" to="TextEdit" method="_on_area_3d_mouse_exited"]
