@@ -8,5 +8,3 @@ res://scenes/other scenes/main.tscn
 res://scenes/tiles/castleTile.tscn
 res://scenes/tiles/hillTile.tscn
 res://scenes/other scenes/path.tscn
-res://scenes/enemies/minion.tscn
-res://scripts/enemy.gd
