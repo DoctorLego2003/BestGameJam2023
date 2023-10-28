@@ -36,8 +36,9 @@ script = ExtResource("3_0qn14")
 [node name="shooting range" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="shooting range"]
-transform = Transform3D(7, 0, 0, 0, 2, 0, 0, 0, 7, 0, 1, 0)
+transform = Transform3D(7, 0, 0, 0, 0.8, 0, 0, 0, 7, 0, 0.5, 0)
 shape = SubResource("CylinderShape3D_jkwrj")
+disabled = true
 
 [connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]
 [connection signal="input_event" from="Area3D" to="TextEdit" method="_on_area_3d_input_event"]

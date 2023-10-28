@@ -1,4 +1,4 @@
-extends PathFollow3D
+extends PathFollow3D, BoxShape3D
 
 @export var health : int
 @export var speed : int
