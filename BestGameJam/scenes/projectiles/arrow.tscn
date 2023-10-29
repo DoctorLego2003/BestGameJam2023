@@ -1,10 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://bpry3vesr8b6t"]
+[gd_scene load_steps=4 format=3 uid="uid://bpry3vesr8b6t"]
 
 [ext_resource type="PackedScene" uid="uid://ewkgcrhk87a0" path="res://models/projectiles/arrow_green.gltf.glb" id="1_14bxr"]
 [ext_resource type="Script" path="res://scripts/arrow.gd" id="1_f27p7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_alvdg"]
+size = Vector3(0.1, 0.6, 0.1)
 
 [node name="arrow" type="Node3D"]
 script = ExtResource("1_f27p7")
 
 [node name="arrow_green_gltf" parent="." instance=ExtResource("1_14bxr")]
 transform = Transform3D(1, 0, 0, 0, -1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="." groups=["projectile"]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_alvdg")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

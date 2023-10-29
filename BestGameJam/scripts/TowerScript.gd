@@ -30,13 +30,8 @@ func findTarget(allTargets):
 func shoot(target):
 	var arrow = arrowScene.instantiate()
 	add_child(arrow)
-	arrow.position = self.position
-	
-	#Calculate direction vector from arrow to target
-	var direction = (target.position - self.position).normalized()
-	
-	print(direction)
-	print("pew")
+	arrow.position.y = 3
+	arrow.target = target
 
 func _process(delta):
 	
@@ -50,3 +45,4 @@ func _process(delta):
 	if(currentTarget != null and shootingTimer >= shootingCooldown):
 		shoot(currentTarget)
 		shootingTimer = 0
+		
