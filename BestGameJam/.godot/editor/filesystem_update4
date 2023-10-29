@@ -1,5 +1,6 @@
 res://scenes/other scenes/main.tscn
 res://scripts/enemy.gd
-res://scripts/enemySpawner.gd
-res://scenes/enemies/enemySpawner.tscn
 res://scenes/enemies/minion.tscn
+res://scenes/projectiles/arrow.tscn
+res://scenes/tiles/tower.tscn
+res://scripts/TowerScript.gd
