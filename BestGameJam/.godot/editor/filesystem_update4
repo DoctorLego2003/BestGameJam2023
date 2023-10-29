@@ -18,3 +18,5 @@ res://scenes/tiles/castle.tscn
 res://scripts/GrassText.gd
 res://scripts/TowerScript.gd
 res://scripts/enemy.gd
+res://scripts/MountainText.gd
+res://scenes/tiles/mountainTile.tscn
