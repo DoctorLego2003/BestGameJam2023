@@ -6,6 +6,8 @@ extends PathFollow3D
 
 func _process(delta):
 	move(delta)
+	if (get_meta("Health") <= 0):
+		self.get_parent().remove_child(self)
 	
 func move(delta):
 	self.progress += delta * speed

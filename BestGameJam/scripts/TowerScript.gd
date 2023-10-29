@@ -34,7 +34,7 @@ func shoot(target):
 	
 	#Calculate direction vector from arrow to target
 	var direction = (target.position - self.position).normalized()
-
+	
 	print(direction)
 	print("pew")
 

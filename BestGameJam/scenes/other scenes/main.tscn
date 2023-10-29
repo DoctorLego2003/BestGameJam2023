@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_3caj8"]
 [ext_resource type="PackedScene" uid="uid://cx550hqmryeyt" path="res://scenes/tiles/forestTile.tscn" id="2_oo3ti"]
-[ext_resource type="PackedScene" uid="uid://qq4k2ipct0lr" path="res://scenes/tiles/grassTile.tscn" id="3_uccty"]
+[ext_resource type="PackedScene" uid="uid://xi6dqtcswlvp" path="res://scenes/tiles/grassTile.tscn" id="3_uccty"]
 [ext_resource type="PackedScene" uid="uid://yv2lkfamiwyo" path="res://scenes/tiles/hillTile.tscn" id="4_t3nv1"]
 [ext_resource type="PackedScene" uid="uid://b6j2a7fdoyv6b" path="res://scenes/tiles/roadStraightTile.tscn" id="5_5knf4"]
 [ext_resource type="PackedScene" uid="uid://dq1rs8ykdo01e" path="res://scenes/tiles/roadCurve60Tile.tscn" id="6_w1agn"]

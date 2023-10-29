@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=3 uid="uid://xi6dqtcswlvp"]
+
+[ext_resource type="PackedScene" uid="uid://4h1hib3ndbw0" path="res://models/basicTiles/hex_forest_detail.gltf.glb" id="1_wldlt"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_efjdy"]
+
+[sub_resource type="GDScript" id="GDScript_xnu64"]
+script/source = "extends TextEdit
+
+var newGrass = preload(\"res://scenes/tiles/grassTile.tscn\")
+var newTower = preload(\"res://scenes/tiles/tower.tscn\")
+
+func _on_area_3d_input_event(camera, event, position, normal, shape_idx):
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_MASK_LEFT and event.pressed:
+			visible = true
+			var main = get_node(\"/root/main\")
+			if (main.get_meta(\"TowerIsClicked\")):
+				switch(main.get_meta(\"ClickedTowerPath\"), main.get_meta(\"ClickedTowerPos\"), get_parent())
+
+func _on_area_3d_mouse_exited():
+	visible = false
+
+func switch(towerPath, towerPos, grass):
+	var main = get_node(\"/root/main\")
+	var tower = get_node(towerPath)
+	var g = newGrass.instantiate()
+	var t = newTower.instantiate()
+	main.get_node(\"gameboard\").add_child(g)
+	main.get_node(\"gameboard\").add_child(t)
+	
+	var grassPos = grass.position
+	
+	t.position = grassPos
+	g.position = towerPos
+	
+	tower.get_parent().remove_child(tower)
+	grass.get_parent().remove_child(grass)
+	
+	#to.remove_from_group(\"gameboard\")
+	main.set_meta(\"TowerIsClicked\", false)
+	main.set_meta(\"ClickedTowerPath\", null)
+
+"
+
+[node name="grassTile" type="Node3D"]
+
+[node name="grassTileModel" parent="." instance=ExtResource("1_wldlt")]
+metadata/towerPlaceable = true
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0.5, 0)
+shape = SubResource("CylinderShape3D_efjdy")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+visible = false
+offset_left = 869.0
+offset_top = 578.0
+offset_right = 1150.0
+offset_bottom = 646.0
+text = "Grass Tile:
+There is enough place for a tower."
+editable = false
+drag_and_drop_selection_enabled = false
+script = SubResource("GDScript_xnu64")
+
+[connection signal="input_event" from="Area3D" to="TextEdit" method="_on_area_3d_input_event"]
+[connection signal="mouse_exited" from="Area3D" to="TextEdit" method="_on_area_3d_mouse_exited"]
