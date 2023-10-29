@@ -14,14 +14,17 @@ func _ready():
 	pass # Replace with function body.
 
 # ==== SHOOTING PART ======= #
-func _on_aggro_area_entered(area):
+
+func _on_agro_area_entered(area):
 	if(area.is_in_group("enemy")):
 		currentTargets.append(area.get_parent())
+		print("enemy entered")
 
-func _on_aggro_area_exited(area):
+
+func _on_agro_area_exited(area):
 	if(area.is_in_group("enemy")):
 		currentTargets.erase(area.get_parent())
-		
+	
 func findTarget(allTargets):
 	return currentTargets[0]
 
@@ -48,6 +51,3 @@ func _process(delta):
 	if(currentTarget != null and shootingTimer >= shootingCooldown):
 		shoot(currentTarget)
 		shootingTimer = 0
-
-
-

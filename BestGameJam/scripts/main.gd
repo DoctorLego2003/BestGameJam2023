@@ -12,5 +12,8 @@ func _process(delta):
 		print('dead')
 	if self.get_meta("TowerIsClicked"):
 		#show UI layer
-		
-	if !self.get_meta("TowerIsClicked"):
+		pass
+	else:
+		#don't show UI layer
+		pass
+	

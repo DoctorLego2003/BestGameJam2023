@@ -1,7 +1,20 @@
 res://scenes/other scenes/main.tscn
-res://scripts/enemy.gd
+res://scripts/main.gd
+res://scripts/TowerText.gd
 res://scenes/enemies/minion.tscn
-res://scenes/projectiles/arrow.tscn
 res://scenes/tiles/tower.tscn
+res://scenes/tiles/roadStraightTile.tscn
+res://scenes/other scenes/path.tscn
+res://scenes/enemies/enemySpawner.tscn
+res://scenes/tiles/castleTile.tscn
+res://scenes/tiles/forestTile.tscn
+res://scenes/tiles/grassTile.tscn
+res://scenes/tiles/hillTile.tscn
+res://scenes/tiles/houseTile.tscn
+res://scenes/tiles/roadCurve30Tile.tscn
+res://scenes/tiles/roadCurve60Tile.tscn
+res://scenes/tiles/roadEndTile.tscn
+res://scenes/tiles/castle.tscn
+res://scripts/GrassText.gd
 res://scripts/TowerScript.gd
-res://scripts/arrow.gd
+res://scripts/enemy.gd
