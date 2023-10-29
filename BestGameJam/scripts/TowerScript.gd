@@ -18,7 +18,6 @@ func _ready():
 func _on_agro_area_entered(area):
 	if(area.is_in_group("enemy")):
 		currentTargets.append(area.get_parent())
-		print("enemy entered")
 
 
 func _on_agro_area_exited(area):
