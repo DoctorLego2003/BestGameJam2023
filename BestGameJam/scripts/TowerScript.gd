@@ -1,10 +1,13 @@
 extends Node
 
-@export var arrow : PackedScene
+@export var arrowScene : PackedScene
 var shootingRange = 2
 
 var currentTargets = []
 var currentTarget
+
+var shootingCooldown = 1
+var shootingTimer : float
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,34 +15,32 @@ func _ready():
 
 # ==== SHOOTING PART ======= #
 func _on_aggro_area_entered(area):
-	if area.is_in_group("enemy"):
-		currentTarget.append(area.get_parent())
-		print("enemy entered range!")
-	
+	if(area.is_in_group("enemy")):
+		currentTargets.append(area.get_parent())
+
 func _on_aggro_area_exited(area):
-	if area.is_in_group("enemy"):
-		currentTarget.erase(area.get_parent())
-		print("enemy exited range!")
+	if(area.is_in_group("enemy")):
+		currentTargets.erase(area.get_parent())
+		
+func findTarget(allTargets):
+	return currentTargets[0]
 
-func shootTarget():
-	var arrowInstance = arrow.instantiate()
-	add_child(arrowInstance)
-
-# ========================== #
-
-# ==== PLACING PART ======= #
-
-
-func _get_drag_data(at_position):
-	return at_position
-
-func _can_drop_data(_pos, data):
-	return false
-
-func _drop_data(_pos, data):
-	pass
-	
+func shoot(target):
+	print("pew")
 # ========================== #
 
 func _process(delta):
-	pass 
+	
+	shootingTimer += delta
+	
+	if(not currentTargets.is_empty()):
+		currentTarget = findTarget(currentTargets)
+	else:
+		currentTarget = null
+		
+	if(currentTarget != null and shootingTimer >= shootingCooldown):
+		shoot(currentTarget)
+		shootingTimer = 0
+
+
+
