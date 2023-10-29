@@ -1,12 +1,7 @@
 res://scenes/other scenes/main.tscn
 res://scripts/enemy.gd
-res://scripts/enemySpawner.gd
-res://scenes/enemies/enemySpawner.tscn
 res://scenes/enemies/minion.tscn
-<<<<<<< HEAD
 res://scenes/projectiles/arrow.tscn
 res://scenes/tiles/tower.tscn
 res://scripts/TowerScript.gd
 res://scripts/arrow.gd
-=======
->>>>>>> 471f81617dbdafd34caccb0f7f938dbcda9fbe68
