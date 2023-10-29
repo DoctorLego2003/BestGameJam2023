@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://cofrkareixyud"]
+[gd_scene load_steps=5 format=3 uid="uid://cofrkareixyud"]
 
 [ext_resource type="Script" path="res://scripts/enemySpawner.gd" id="1_xec3u"]
 [ext_resource type="PackedScene" uid="uid://s14iw0cm8fwl" path="res://scenes/enemies/minion.tscn" id="2_y13oq"]
+[ext_resource type="PackedScene" uid="uid://d1x4bakhrntg3" path="res://scenes/enemies/archer.tscn" id="3_4kj0n"]
+[ext_resource type="PackedScene" uid="uid://chre6n0k5wy12" path="res://scenes/enemies/warrior.tscn" id="4_nmkpy"]
 
 [node name="enemySpawner" type="Node3D"]
 script = ExtResource("1_xec3u")
 minion = ExtResource("2_y13oq")
-cooldownWave = 2
-intervalSpawn = 0.5
-amountOfEnemies = 3
+archer = ExtResource("3_4kj0n")
+warrior = ExtResource("4_nmkpy")
+cooldownWave = 10
+intervalSpawn = 1.0

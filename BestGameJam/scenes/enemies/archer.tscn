@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1x4bakhrntg3"]
+
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_h11gq"]
+[ext_resource type="PackedScene" uid="uid://c8ov5oxja3nen" path="res://models/enemies/character_skeleton_archer.gltf" id="2_g0sdc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1hgfl"]
+
+[node name="archer" type="PathFollow3D"]
+script = ExtResource("1_h11gq")
+health = 1
+speed = 4
+
+[node name="character_skeleton_archer" parent="." instance=ExtResource("2_g0sdc")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="." groups=["enemy"]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_1hgfl")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

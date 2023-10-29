@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://chre6n0k5wy12"]
+
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_we2yw"]
+[ext_resource type="PackedScene" uid="uid://bi650ue5hhglo" path="res://models/enemies/character_skeleton_warrior.gltf" id="2_beunh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1hgfl"]
+
+[node name="warrior" type="PathFollow3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("1_we2yw")
+health = 4
+speed = 1
+damage = 5
+
+[node name="Area3D" type="Area3D" parent="." groups=["enemy"]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(-0.6, 0, -5.24537e-08, 0, 0.6, 0, 5.24537e-08, 0, -0.6, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_1hgfl")
+
+[node name="character_skeleton_warrior" parent="." instance=ExtResource("2_beunh")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 0, 0, 0)
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

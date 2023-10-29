@@ -5,9 +5,12 @@ var target : Node3D
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var direction = (target.global_position - self.global_position).normalized()
-	self.global_position = global_position.move_toward(target.global_position, speed * delta)
-	self.look_at(direction)
+	if(target != null):
+		var direction = (target.global_position - self.global_position).normalized()
+		self.global_position = global_position.move_toward(target.global_position, speed * delta)
+		self.look_at(direction)
+	else:
+		queue_free()
 	
 	if(global_position.y < 0):
 		queue_free()

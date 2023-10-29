@@ -21,6 +21,6 @@ func _on_area_3d_area_entered(area):
 	
 	if (area.name == "CastleArea"):
 		var main = get_node("/root/main")
-		var newLives = main.get_meta('Lives') - 1
+		var newLives = main.get_meta('Lives') - damage
 		main.set_meta("Lives", newLives)
 		get_parent().remove_child(self)

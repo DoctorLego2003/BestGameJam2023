@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dj5o5hrsdftgc"]
+[gd_scene load_steps=25 format=3 uid="uid://dj5o5hrsdftgc"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_3caj8"]
 [ext_resource type="PackedScene" uid="uid://cx550hqmryeyt" path="res://scenes/tiles/forestTile.tscn" id="2_oo3ti"]
@@ -17,6 +17,13 @@
 [ext_resource type="PackedScene" uid="uid://6te2cmysfm7y" path="res://scenes/tiles/watercornerTile.tscn" id="12_jhkr4"]
 [ext_resource type="PackedScene" uid="uid://b5grntren6x80" path="res://scenes/tiles/waterHalfTile.tscn" id="13_386yi"]
 [ext_resource type="PackedScene" uid="uid://bcfumbms1f5ea" path="res://scenes/tiles/waterTile.tscn" id="14_7h8kp"]
+[ext_resource type="AudioStream" uid="uid://cijkpukaasuc8" path="res://sounds/magic-tavern-138952.mp3" id="18_p5awv"]
+[ext_resource type="PackedScene" uid="uid://b5rffw6igpr46" path="res://scenes/other scenes/path2.tscn" id="19_eimpx"]
+[ext_resource type="Script" path="res://scripts/enemySpawner2.gd" id="19_frt6u"]
+[ext_resource type="PackedScene" uid="uid://kl8vs841rvbr" path="res://scenes/other scenes/path3.tscn" id="20_snhds"]
+[ext_resource type="Script" path="res://scripts/enemySpawner3.gd" id="21_74ke4"]
+[ext_resource type="PackedScene" uid="uid://d2170c6kuqg06" path="res://scenes/other scenes/path4.tscn" id="21_kxf4j"]
+[ext_resource type="Script" path="res://scripts/enemySpawner4.gd" id="23_34wbf"]
 
 [node name="main" type="Node3D"]
 script = ExtResource("1_3caj8")
@@ -995,6 +1002,34 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -5.196)
 
 [node name="enemySpawner" parent="." instance=ExtResource("11_8jhl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -5.196)
+cooldownWave = 20
 
 [node name="path" parent="enemySpawner" instance=ExtResource("9_x2yvr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 5.196)
+
+[node name="themeSong" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("18_p5awv")
+
+[node name="enemySpawner2" parent="." instance=ExtResource("11_8jhl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("19_frt6u")
+cooldownWave = 20
+waves = [[0, 3, 0], [1, 2, 0], [2, 3, 0], [3, 3, 0], [3, 4, 1], [4, 4, 2], [6, 4, 1], [8, 4, 2], [6, 6, 4]]
+
+[node name="path" parent="enemySpawner2" instance=ExtResource("19_eimpx")]
+
+[node name="enemySpawner3" parent="." instance=ExtResource("11_8jhl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("21_74ke4")
+cooldownWave = 20
+waves = [[0, 3, 0], [0, 3, 0], [0, 4, 0], [2, 3, 0], [2, 3, 1], [3, 3, 1], [5, 2, 2], [0, 0, 7], [0, 4, 3]]
+
+[node name="path" parent="enemySpawner3" instance=ExtResource("20_snhds")]
+
+[node name="enemySpawner4" parent="." instance=ExtResource("11_8jhl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("23_34wbf")
+cooldownWave = 20
+waves = [[0, 2, 1], [0, 3, 2], [2, 4, 3], [3, 4, 3], [4, 4, 4], [2, 2, 6], [0, 3, 7], [10, 5, 0], [9, 6, 3]]
+
+[node name="path" parent="enemySpawner4" instance=ExtResource("21_kxf4j")]

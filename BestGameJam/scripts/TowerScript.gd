@@ -32,6 +32,7 @@ func shoot(target):
 	add_child(arrow)
 	arrow.position.y = 3
 	arrow.target = target
+	$arrowShoot.play()
 
 func _process(delta):
 	
