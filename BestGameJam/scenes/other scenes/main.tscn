@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dj5o5hrsdftgc"]
+[gd_scene load_steps=27 format=3 uid="uid://dj5o5hrsdftgc"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_3caj8"]
 [ext_resource type="PackedScene" uid="uid://cx550hqmryeyt" path="res://scenes/tiles/forestTile.tscn" id="2_oo3ti"]
@@ -24,6 +24,8 @@
 [ext_resource type="Script" path="res://scripts/enemySpawner3.gd" id="21_74ke4"]
 [ext_resource type="PackedScene" uid="uid://d2170c6kuqg06" path="res://scenes/other scenes/path4.tscn" id="21_kxf4j"]
 [ext_resource type="Script" path="res://scripts/enemySpawner4.gd" id="23_34wbf"]
+[ext_resource type="Texture2D" uid="uid://cpia0cutcaqvw" path="res://UI/templates/ExportedIcons/Icon_Heart.png" id="25_m81gm"]
+[ext_resource type="Script" path="res://scenes/other scenes/lives.gd" id="26_gqror"]
 
 [node name="main" type="Node3D"]
 script = ExtResource("1_3caj8")
@@ -1033,3 +1035,33 @@ cooldownWave = 20
 waves = [[0, 2, 1], [0, 3, 2], [2, 4, 3], [3, 4, 3], [4, 4, 4], [2, 2, 6], [0, 3, 7], [10, 5, 0], [9, 6, 3]]
 
 [node name="path" parent="enemySpawner4" instance=ExtResource("21_kxf4j")]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("25_m81gm")
+expand_mode = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control"]
+layout_mode = 2
+offset_left = 29.0
+offset_top = 27.0
+offset_right = 109.0
+offset_bottom = 67.0
+
+[node name="Label" type="Label" parent="Control/VBoxContainer2"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_vertical = 1
+script = ExtResource("26_gqror")
