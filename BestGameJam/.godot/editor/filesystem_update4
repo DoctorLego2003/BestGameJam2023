@@ -4,3 +4,4 @@ res://scenes/enemies/minion.tscn
 res://scenes/projectiles/arrow.tscn
 res://scenes/tiles/tower.tscn
 res://scripts/TowerScript.gd
+res://scripts/arrow.gd
