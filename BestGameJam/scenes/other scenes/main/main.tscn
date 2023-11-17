@@ -1,6 +1,6 @@
 [gd_scene load_steps=27 format=3 uid="uid://dj5o5hrsdftgc"]
 
-[ext_resource type="Script" path="res://scripts/main.gd" id="1_3caj8"]
+[ext_resource type="Script" path="res://scripts/otherScenes/main.gd" id="1_3caj8"]
 [ext_resource type="PackedScene" uid="uid://cx550hqmryeyt" path="res://scenes/tiles/forestTile.tscn" id="2_oo3ti"]
 [ext_resource type="PackedScene" uid="uid://xi6dqtcswlvp" path="res://scenes/tiles/grassTile.tscn" id="3_uccty"]
 [ext_resource type="PackedScene" uid="uid://yv2lkfamiwyo" path="res://scenes/tiles/hillTile.tscn" id="4_t3nv1"]
@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ufv28yvahdds" path="res://scenes/tiles/roadEndTile.tscn" id="8_nxxtm"]
 [ext_resource type="PackedScene" uid="uid://de0fhsi1a7hpd" path="res://scenes/tiles/roadIntersection.tscn" id="9_qi0ta"]
 [ext_resource type="PackedScene" uid="uid://b7wkudwqejkhq" path="res://scenes/tiles/tower.tscn" id="9_tn1iv"]
-[ext_resource type="PackedScene" uid="uid://cpr6fk6i5dqh" path="res://scenes/other scenes/path.tscn" id="9_x2yvr"]
+[ext_resource type="PackedScene" uid="uid://cpr6fk6i5dqh" path="res://scenes/other scenes/main/path.tscn" id="9_x2yvr"]
 [ext_resource type="PackedScene" uid="uid://b2hgbvaywgkvd" path="res://scenes/tiles/mountainTile.tscn" id="10_811j2"]
 [ext_resource type="PackedScene" uid="uid://cofrkareixyud" path="res://scenes/enemies/enemySpawner.tscn" id="11_8jhl8"]
 [ext_resource type="PackedScene" uid="uid://ckt0jbehov24g" path="res://scenes/tiles/castleTile.tscn" id="11_y6qga"]
@@ -18,14 +18,14 @@
 [ext_resource type="PackedScene" uid="uid://b5grntren6x80" path="res://scenes/tiles/waterHalfTile.tscn" id="13_386yi"]
 [ext_resource type="PackedScene" uid="uid://bcfumbms1f5ea" path="res://scenes/tiles/waterTile.tscn" id="14_7h8kp"]
 [ext_resource type="AudioStream" uid="uid://cijkpukaasuc8" path="res://sounds/magic-tavern-138952.mp3" id="18_p5awv"]
-[ext_resource type="PackedScene" uid="uid://b5rffw6igpr46" path="res://scenes/other scenes/path2.tscn" id="19_eimpx"]
-[ext_resource type="Script" path="res://scripts/enemySpawner2.gd" id="19_frt6u"]
-[ext_resource type="PackedScene" uid="uid://kl8vs841rvbr" path="res://scenes/other scenes/path3.tscn" id="20_snhds"]
-[ext_resource type="Script" path="res://scripts/enemySpawner3.gd" id="21_74ke4"]
-[ext_resource type="PackedScene" uid="uid://d2170c6kuqg06" path="res://scenes/other scenes/path4.tscn" id="21_kxf4j"]
-[ext_resource type="Script" path="res://scripts/enemySpawner4.gd" id="23_34wbf"]
+[ext_resource type="PackedScene" uid="uid://b5rffw6igpr46" path="res://scenes/other scenes/main/path2.tscn" id="19_eimpx"]
+[ext_resource type="Script" path="res://scripts/enemies/enemySpawner2.gd" id="19_frt6u"]
+[ext_resource type="PackedScene" uid="uid://kl8vs841rvbr" path="res://scenes/other scenes/main/path3.tscn" id="20_snhds"]
+[ext_resource type="Script" path="res://scripts/enemies/enemySpawner3.gd" id="21_74ke4"]
+[ext_resource type="PackedScene" uid="uid://d2170c6kuqg06" path="res://scenes/other scenes/main/path4.tscn" id="21_kxf4j"]
+[ext_resource type="Script" path="res://scripts/enemies/enemySpawner4.gd" id="23_34wbf"]
 [ext_resource type="Texture2D" uid="uid://cpia0cutcaqvw" path="res://UI/templates/ExportedIcons/Icon_Heart.png" id="25_m81gm"]
-[ext_resource type="Script" path="res://scenes/other scenes/lives.gd" id="26_gqror"]
+[ext_resource type="Script" path="res://scripts/otherScenes/lives.gd" id="26_gqror"]
 
 [node name="main" type="Node3D"]
 script = ExtResource("1_3caj8")
@@ -1002,15 +1002,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 6.928)
 [node name="towerTile" parent="gameboard" instance=ExtResource("9_tn1iv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -5.196)
 
+[node name="themeSong" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("18_p5awv")
+
 [node name="enemySpawner" parent="." instance=ExtResource("11_8jhl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -5.196)
 cooldownWave = 20
 
 [node name="path" parent="enemySpawner" instance=ExtResource("9_x2yvr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 5.196)
-
-[node name="themeSong" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("18_p5awv")
 
 [node name="enemySpawner2" parent="." instance=ExtResource("11_8jhl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

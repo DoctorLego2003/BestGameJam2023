@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://bpry3vesr8b6t"]
 
+[ext_resource type="Script" path="res://scripts/projectiles/arrow.gd" id="1_7c8pg"]
 [ext_resource type="PackedScene" uid="uid://ewkgcrhk87a0" path="res://models/projectiles/arrow_green.gltf.glb" id="1_14bxr"]
-[ext_resource type="Script" path="res://scripts/arrow.gd" id="1_f27p7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_alvdg"]
 size = Vector3(0.1, 0.6, 0.1)
 
 [node name="arrow" type="Node3D"]
-script = ExtResource("1_f27p7")
+script = ExtResource("1_7c8pg")
 
 [node name="arrow_green_gltf" parent="." instance=ExtResource("1_14bxr")]
 transform = Transform3D(1, 0, 0, 0, -1, 0, 0, 0, 1, 0, 0, 0)

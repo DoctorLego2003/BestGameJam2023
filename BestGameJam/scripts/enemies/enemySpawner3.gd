@@ -60,14 +60,11 @@ static func sum_array(array):
 	return sum
 
 func spawnArcher():
-	var newarcher = warrior.instantiate()
-	path.add_child(newarcher)
+	path.add_child(archer.instantiate())
 
 func spawnMinion():
-	var newminion = minion.instantiate()
-	path.add_child(newminion)
+	path.add_child(minion.instantiate())
 	
 func spawnWarrior():
-	var newwarrior = warrior.instantiate()
-	path.add_child(newwarrior)
+	path.add_child(warrior.instantiate())
 	

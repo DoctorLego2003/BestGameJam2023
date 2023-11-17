@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ufv28yvahdds"]
 
 [ext_resource type="PackedScene" uid="uid://bvcgha1ny7uwt" path="res://models/roadTiles/hex_forest_roadA_detail.gltf.glb" id="1_cnh7j"]
-[ext_resource type="Script" path="res://scripts/RoadText.gd" id="2_ccrbf"]
+[ext_resource type="Script" path="res://scripts/tiles/RoadText.gd" id="2_ccrbf"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_bdsh2"]
 

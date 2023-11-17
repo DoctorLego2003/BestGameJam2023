@@ -15,7 +15,7 @@ var allEnemyTypes = [minion, archer, warrior]
 
 var waveCount = 0
 var enemyType
-@export var waves =  [[2,1,0],[4,2,0],[4,3,0],[4,4,1],[3,5,3],[3,6,2],[3,8,3],[0,9,4],[4,8,5]] 
+@export var waves =  [[0,3,0],[1,2,0],[2,3,0],[3,3,0],[3,4,1],[4,4,2],[6,4,1],[8,4,2],[6,6,4]]  
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -26,6 +26,7 @@ func _ready():
 func _process(delta):
 	if (waveCount <= waves.size() -1):
 		if inWave:
+			amountOfEnemies = sum_array(waves[waveCount])
 			if (amountSpawned < amountOfEnemies):
 				timer += delta
 				if(timer >= intervalSpawn):
@@ -49,7 +50,6 @@ func _process(delta):
 			timer += delta
 			if(timer >= cooldownWave):
 				timer = 0
-				amountOfEnemies = sum_array(waves[waveCount])
 				waveCount += 1
 				inWave = true
 
@@ -60,14 +60,11 @@ static func sum_array(array):
 	return sum
 
 func spawnArcher():
-	var newarcher = warrior.instantiate()
-	path.add_child(newarcher)
+	path.add_child(archer.instantiate())
 
 func spawnMinion():
-	var newminion = minion.instantiate()
-	path.add_child(newminion)
+	path.add_child(minion.instantiate())
 	
 func spawnWarrior():
-	var newwarrior = warrior.instantiate()
-	path.add_child(newwarrior)
+	path.add_child(warrior.instantiate())
 	

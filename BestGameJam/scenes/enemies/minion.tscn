@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://s14iw0cm8fwl"]
 
-[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_6y04v"]
+[ext_resource type="Script" path="res://scripts/enemies/enemy.gd" id="1_6y04v"]
 [ext_resource type="PackedScene" uid="uid://dydytw6qc3j38" path="res://models/enemies/character_skeleton_minion.gltf" id="1_o0by6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1hgfl"]

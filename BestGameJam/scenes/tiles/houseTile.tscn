@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://4h1hib3ndbw0" path="res://models/basicTiles/hex_forest_detail.gltf.glb" id="1_swpp7"]
 [ext_resource type="PackedScene" uid="uid://dfbqr74huasan" path="res://models/details/house.gltf.glb" id="2_f3osq"]
-[ext_resource type="Script" path="res://scripts/HouseText.gd" id="3_dih42"]
+[ext_resource type="Script" path="res://scripts/tiles/HouseText.gd" id="3_dih42"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ajq5w"]
 

@@ -1,0 +1,95 @@
+[gd_scene load_steps=7 format=3 uid="uid://b2c0lf72y7l3v"]
+
+[ext_resource type="Script" path="res://scripts/otherScenes/winning_screen.gd" id="1_5qhwv"]
+
+[sub_resource type="FontFile" id="FontFile_f01m3"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/1/variation_coordinates = {}
+cache/1/face_index = 0
+cache/1/embolden = 2.0
+cache/1/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/1/16/0/ascent = 0.0
+cache/1/16/0/descent = 0.0
+cache/1/16/0/underline_position = 0.0
+cache/1/16/0/underline_thickness = 0.0
+cache/1/16/0/scale = 1.0
+cache/1/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[sub_resource type="FontVariation" id="FontVariation_ts2k7"]
+base_font = SubResource("FontFile_f01m3")
+spacing_glyph = 5
+spacing_space = 5
+
+[sub_resource type="Theme" id="Theme_8ys31"]
+/fonts/font = SubResource("FontVariation_ts2k7")
+
+[sub_resource type="FontVariation" id="FontVariation_81m11"]
+variation_embolden = 0.7
+spacing_glyph = 1
+spacing_space = 3
+spacing_top = 3
+spacing_bottom = 2
+
+[sub_resource type="Theme" id="Theme_8xlod"]
+default_base_scale = 5.0
+default_font = SubResource("FontVariation_81m11")
+default_font_size = 25
+
+[node name="winning_screen" type="Node2D"]
+script = ExtResource("1_5qhwv")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1155.0
+offset_bottom = 649.0
+mouse_default_cursor_shape = 3
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 1
+offset_left = 434.0
+offset_top = 471.0
+offset_right = 720.0
+offset_bottom = 553.0
+scale = Vector2(1.04376, 1.02086)
+theme = SubResource("Theme_8ys31")
+text = "Play Again"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -171.5
+offset_top = -71.5
+offset_right = 171.5
+offset_bottom = 71.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_8xlod")
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "The Kingdom is safe now!"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "Congragulations
+"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "You Won!"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]

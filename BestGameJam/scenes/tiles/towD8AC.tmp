@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://b7wkudwqejkhq"]
 
 [ext_resource type="PackedScene" uid="uid://4h1hib3ndbw0" path="res://models/basicTiles/hex_forest_detail.gltf.glb" id="1_55ydr"]
-[ext_resource type="Script" path="res://scripts/TowerScript.gd" id="1_881tl"]
+[ext_resource type="Script" path="res://scripts/tiles/TowerScript.gd" id="1_881tl"]
 [ext_resource type="PackedScene" uid="uid://bpry3vesr8b6t" path="res://scenes/projectiles/arrow.tscn" id="2_24dxs"]
 [ext_resource type="PackedScene" uid="uid://bqxr0by7hxxxf" path="res://models/details/watchtower.gltf.glb" id="2_nin5s"]
-[ext_resource type="Script" path="res://scripts/TowerText.gd" id="3_0qn14"]
+[ext_resource type="Script" path="res://scripts/tiles/TowerText.gd" id="3_0qn14"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_b4lpd"]
 
