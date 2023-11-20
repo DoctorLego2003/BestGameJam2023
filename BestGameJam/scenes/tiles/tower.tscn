@@ -1,13 +1,21 @@
-[gd_scene load_steps=9 format=3 uid="uid://b7wkudwqejkhq"]
+[gd_scene load_steps=14 format=3 uid="uid://b7wkudwqejkhq"]
 
 [ext_resource type="PackedScene" uid="uid://4h1hib3ndbw0" path="res://models/basicTiles/hex_forest_detail.gltf.glb" id="1_55ydr"]
 [ext_resource type="Script" path="res://scripts/tiles/TowerScript.gd" id="1_84i0f"]
 [ext_resource type="PackedScene" uid="uid://bpry3vesr8b6t" path="res://scenes/projectiles/arrow.tscn" id="2_24dxs"]
 [ext_resource type="PackedScene" uid="uid://bqxr0by7hxxxf" path="res://models/details/watchtower.gltf.glb" id="2_nin5s"]
 [ext_resource type="Script" path="res://scripts/tiles/TowerText.gd" id="5_kg1w0"]
+[ext_resource type="Theme" uid="uid://e7m7ld2wo1f4" path="res://UI/TileDescriptionFont.tres" id="5_qqjgd"]
+[ext_resource type="Texture2D" uid="uid://cfrj2g3eh6fqr" path="res://UI/templates/ExportedIcons/Item3.png" id="6_2s525"]
 [ext_resource type="AudioStream" uid="uid://c4v7cskomjr4x" path="res://sounds/bow-release-bow-and-arrow-4-101936.mp3" id="6_ra6mp"]
+[ext_resource type="StyleBox" uid="uid://cwrlyafg7l4" path="res://UI/TileDescription.tres" id="7_6kphj"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_b4lpd"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_w0g3j"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5glqi"]
+texture = ExtResource("6_2s525")
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_jkwrj"]
 
@@ -24,17 +32,38 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1, 0)
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("CylinderShape3D_b4lpd")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, -0.00342703, 0.959521, -0.415263)
+shape = SubResource("CylinderShape3D_w0g3j")
 
 [node name="TextEdit" type="TextEdit" parent="."]
 visible = false
-offset_right = 8.0
-offset_bottom = 8.0
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -80.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("5_qqjgd")
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_5glqi")
+theme_override_styles/read_only = ExtResource("7_6kphj")
 text = "Tower Tile:
 Get it to the front lines!"
 editable = false
+context_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
 script = ExtResource("5_kg1w0")
 
 [node name="agro" type="Area3D" parent="."]

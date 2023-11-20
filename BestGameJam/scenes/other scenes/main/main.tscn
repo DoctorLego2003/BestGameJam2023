@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dj5o5hrsdftgc"]
+[gd_scene load_steps=37 format=3 uid="uid://dj5o5hrsdftgc"]
 
 [ext_resource type="Script" path="res://scripts/otherScenes/main.gd" id="1_3caj8"]
 [ext_resource type="PackedScene" uid="uid://cx550hqmryeyt" path="res://scenes/tiles/forestTile.tscn" id="2_oo3ti"]
@@ -26,6 +26,31 @@
 [ext_resource type="Script" path="res://scripts/enemies/enemySpawner4.gd" id="23_34wbf"]
 [ext_resource type="Texture2D" uid="uid://cpia0cutcaqvw" path="res://UI/templates/ExportedIcons/Icon_Heart.png" id="25_m81gm"]
 [ext_resource type="Script" path="res://scripts/otherScenes/lives.gd" id="26_gqror"]
+[ext_resource type="FontFile" uid="uid://0toj8kkqwoeo" path="res://UI/fonts/hf-free-complete/futile-pro-v1/FutilePro.ttf" id="26_l320p"]
+[ext_resource type="Texture2D" uid="uid://cfrj2g3eh6fqr" path="res://UI/templates/ExportedIcons/Item3.png" id="27_l234i"]
+[ext_resource type="FontFile" uid="uid://bw7sv6mpwnslq" path="res://UI/fonts/hf-free-complete/compass-pro-v1.1/CompassPro.otf" id="28_xc3yi"]
+
+[sub_resource type="Theme" id="Theme_vlpqb"]
+default_font = ExtResource("26_l320p")
+default_font_size = 26
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1hq8d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ha6x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2iy3w"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+
+[sub_resource type="Theme" id="Theme_6d84i"]
+default_font = ExtResource("28_xc3yi")
+default_font_size = 26
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a0i0a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3aaph"]
 
 [node name="main" type="Node3D"]
 script = ExtResource("1_3caj8")
@@ -1036,8 +1061,7 @@ waves = [[0, 2, 1], [0, 3, 2], [2, 4, 3], [3, 4, 3], [4, 4, 4], [2, 2, 6], [0, 3
 
 [node name="path" parent="enemySpawner4" instance=ExtResource("21_kxf4j")]
 
-[node name="Control" type="Control" parent="."]
-modulate = Color(0.823529, 0.486275, 0.509804, 0.784314)
+[node name="HeartUILayer" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -1050,27 +1074,101 @@ offset_right = -1.0
 offset_bottom = -94.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer"]
+[node name="HeartTexture" type="TextureRect" parent="HeartUILayer"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
+offset_right = 80.0481
+offset_bottom = 75.0
 texture = ExtResource("25_m81gm")
 expand_mode = 3
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="Control"]
-layout_mode = 2
-offset_left = 29.0
-offset_top = 27.0
-offset_right = 109.0
-offset_bottom = 67.0
-
-[node name="Label" type="Label" parent="Control/VBoxContainer2"]
+[node name="HeartCount" type="TextEdit" parent="HeartUILayer/HeartTexture"]
 custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-size_flags_vertical = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = SubResource("Theme_vlpqb")
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1hq8d")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5ha6x")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_2iy3w")
+editable = false
+context_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
 script = ExtResource("26_gqror")
+
+[node name="TowerPlaceUI" type="Control" parent="."]
+visible = false
+light_mask = 1024
+visibility_layer = 1024
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="TowerPlaceUI"]
+z_index = 5
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -220.0
+offset_top = -120.0
+offset_right = 220.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("27_l234i")
+expand_mode = 1
+
+[node name="TextEdit" type="RichTextLabel" parent="TowerPlaceUI/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -204.5
+offset_top = -29.0
+offset_right = 204.5
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_6d84i")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a0i0a")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3aaph")
+text = "Click on an empty field to swap the tower position."
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+
+[node name="Panel" type="Panel" parent="TowerPlaceUI"]
+modulate = Color(1, 1, 1, 0.705882)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1

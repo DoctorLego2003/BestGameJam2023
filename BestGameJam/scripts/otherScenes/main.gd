@@ -12,8 +12,8 @@ func _process(delta):
 		get_tree().change_scene_to_file("res://scenes/other scenes/end_screen.tscn")
 	if self.get_meta("TowerIsClicked"):
 		#show UI layer
-		pass
+		$TowerPlaceUI.visible = true
 	else:
 		#don't show UI layer
-		pass
+		$TowerPlaceUI.visible = false
 	
