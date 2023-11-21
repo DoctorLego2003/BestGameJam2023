@@ -30,6 +30,7 @@ func _process(delta):
 			if (amountSpawned < amountOfEnemies):
 				timer += delta
 				if(timer >= intervalSpawn):
+					$SpawnSound.play()
 					if (waves[waveCount][0] > 0):
 						spawnArcher()
 						amountSpawned += 1
