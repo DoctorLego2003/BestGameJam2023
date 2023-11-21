@@ -1032,7 +1032,7 @@ stream = ExtResource("18_p5awv")
 
 [node name="enemySpawner" parent="." instance=ExtResource("11_8jhl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -5.196)
-cooldownWave = 20
+intervalSpawn = 0.5
 
 [node name="path" parent="enemySpawner" instance=ExtResource("9_x2yvr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 5.196)
@@ -1040,7 +1040,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 5.196)
 [node name="enemySpawner2" parent="." instance=ExtResource("11_8jhl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("19_frt6u")
-cooldownWave = 20
+intervalSpawn = 0.5
 waves = [[0, 3, 0], [1, 2, 0], [2, 3, 0], [3, 3, 0], [3, 4, 1], [4, 4, 2], [6, 4, 1], [8, 4, 2], [6, 6, 4]]
 
 [node name="path" parent="enemySpawner2" instance=ExtResource("19_eimpx")]
@@ -1048,7 +1048,8 @@ waves = [[0, 3, 0], [1, 2, 0], [2, 3, 0], [3, 3, 0], [3, 4, 1], [4, 4, 2], [6, 4
 [node name="enemySpawner3" parent="." instance=ExtResource("11_8jhl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("21_74ke4")
-cooldownWave = 20
+cooldownWave = 15
+intervalSpawn = 0.5
 waves = [[0, 3, 0], [0, 3, 0], [0, 4, 0], [2, 3, 0], [2, 3, 1], [3, 3, 1], [5, 2, 2], [0, 0, 7], [0, 4, 3]]
 
 [node name="path" parent="enemySpawner3" instance=ExtResource("20_snhds")]
@@ -1056,7 +1057,8 @@ waves = [[0, 3, 0], [0, 3, 0], [0, 4, 0], [2, 3, 0], [2, 3, 1], [3, 3, 1], [5, 2
 [node name="enemySpawner4" parent="." instance=ExtResource("11_8jhl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("23_34wbf")
-cooldownWave = 20
+cooldownWave = 8
+intervalSpawn = 0.5
 waves = [[0, 2, 1], [0, 3, 2], [2, 4, 3], [3, 4, 3], [4, 4, 4], [2, 2, 6], [0, 3, 7], [10, 5, 0], [9, 6, 3]]
 
 [node name="path" parent="enemySpawner4" instance=ExtResource("21_kxf4j")]
@@ -1164,7 +1166,8 @@ shortcut_keys_enabled = false
 deselect_on_focus_loss_enabled = false
 
 [node name="Panel" type="Panel" parent="TowerPlaceUI"]
-modulate = Color(1, 1, 1, 0.705882)
+modulate = Color(1, 1, 1, 0.588235)
+self_modulate = Color(1, 1, 1, 0.784314)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

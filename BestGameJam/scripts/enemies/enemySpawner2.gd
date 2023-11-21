@@ -52,6 +52,8 @@ func _process(delta):
 				timer = 0
 				waveCount += 1
 				inWave = true
+	else:
+		pass
 
 static func sum_array(array):
 	var sum = 0.0

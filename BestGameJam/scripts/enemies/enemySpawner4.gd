@@ -26,6 +26,7 @@ func _ready():
 func _process(delta):
 	if (waveCount <= waves.size() -1):
 		if inWave:
+			amountOfEnemies = sum_array(waves[waveCount])
 			if (amountSpawned < amountOfEnemies):
 				timer += delta
 				if(timer >= intervalSpawn):
@@ -49,7 +50,6 @@ func _process(delta):
 			timer += delta
 			if(timer >= cooldownWave):
 				timer = 0
-				amountOfEnemies = sum_array(waves[waveCount])
 				waveCount += 1
 				inWave = true
 
