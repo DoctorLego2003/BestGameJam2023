@@ -6,7 +6,7 @@ var shootingRange = 2
 var currentTargets = []
 var currentTarget
 
-var shootingCooldown = 1
+var shootingCooldown = 0.8
 var shootingTimer : float
 
 # Called when the node enters the scene tree for the first time.

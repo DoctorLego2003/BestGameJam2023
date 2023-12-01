@@ -1,10 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://yv2lkfamiwyo"]
+[gd_scene load_steps=9 format=3 uid="uid://yv2lkfamiwyo"]
 
 [ext_resource type="PackedScene" uid="uid://4h1hib3ndbw0" path="res://models/basicTiles/hex_forest_detail.gltf.glb" id="1_axi4l"]
 [ext_resource type="PackedScene" uid="uid://85wkxxgr8il2" path="res://models/details/detail_hill.gltf.glb" id="2_kpjf8"]
+[ext_resource type="Theme" uid="uid://e7m7ld2wo1f4" path="res://UI/TileDescriptionFont.tres" id="3_04hgd"]
 [ext_resource type="Script" path="res://scripts/tiles/HillText.gd" id="3_sivwr"]
+[ext_resource type="Texture2D" uid="uid://cfrj2g3eh6fqr" path="res://UI/templates/ExportedIcons/Item3.png" id="4_qimn7"]
+[ext_resource type="StyleBox" uid="uid://cwrlyafg7l4" path="res://UI/TileDescription.tres" id="5_pqwst"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_jhr38"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ich3f"]
+texture = ExtResource("4_qimn7")
 
 [node name="hillTile" type="Node3D"]
 
@@ -14,6 +20,7 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0)
@@ -21,14 +28,30 @@ shape = SubResource("CylinderShape3D_jhr38")
 
 [node name="TextEdit" type="TextEdit" parent="."]
 visible = false
-offset_left = 943.0
-offset_top = 581.0
-offset_right = 1154.0
-offset_bottom = 650.0
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -80.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("3_04hgd")
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_ich3f")
+theme_override_styles/read_only = ExtResource("5_pqwst")
 text = "Hill Tile:
 There is a hill in the way."
 editable = false
+context_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+wrap_mode = 1
 script = ExtResource("3_sivwr")
 
 [connection signal="input_event" from="Area3D" to="TextEdit" method="_on_area_3d_input_event"]

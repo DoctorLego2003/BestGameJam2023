@@ -3,17 +3,18 @@ extends Node
 @export var minion : PackedScene
 @export var archer : PackedScene
 @export var warrior : PackedScene
-@export var cooldownWave : int
-@export var intervalSpawn : float
+@export var cooldownWave : int = 20
+@export var intervalSpawn : float = 0.5
 var amountOfEnemies : int
 
 var timer : float
 var path
 var amountSpawned = 0
 var inWave = true
-var allEnemyTypes = [minion, archer, warrior]
+var allEnemyTypes = [archer, minion, warrior]
 
 var waveCount = 0
+var NewWave = true
 var enemyType
 @export var waves =  [[0,2,1],[0,3,2],[2,4,3],[3,4,3],[4,4,4],[2,2,6],[0,3,7],[10,5,0],[9,6,3]] 
 
@@ -26,38 +27,39 @@ func _ready():
 func _process(delta):
 	if (waveCount <= waves.size() -1):
 		if inWave:
-			amountOfEnemies = sum_array(waves[waveCount])
-			if (amountSpawned < amountOfEnemies):
-				timer += delta
-				if(timer >= intervalSpawn):
-					$SpawnSound.play()
-					if (waves[waveCount][0] > 0):
-						spawnArcher()
-						amountSpawned += 1
-						waves[waveCount][0] -= 1
-					elif (waves[waveCount][1] > 0):
-						spawnMinion()	
-						amountSpawned += 1
-						waves[waveCount][1] -= 1
-					elif (waves[waveCount][2] > 0):
-						spawnWarrior()
-						amountSpawned += 1
-						waves[waveCount][2] -= 1
-					timer = 0
-			else:
-				amountSpawned = 0
-				inWave = false
+			if (NewWave):
+				NewWave = false
+			timer += delta
+			if(timer >= intervalSpawn):
+				$SpawnSound.play()
+				if (waves[waveCount][0] > 0):
+					spawnArcher()
+					amountSpawned += 1
+					waves[waveCount][0] -= 1
+				elif (waves[waveCount][1] > 0):
+					spawnMinion()	
+					amountSpawned += 1
+					waves[waveCount][1] -= 1
+				elif (waves[waveCount][2] > 0):
+					spawnWarrior()
+					amountSpawned += 1
+					waves[waveCount][2] -= 1
+				else:
+					amountSpawned = 0
+					inWave = false
+				timer = 0
 		else:
 			timer += delta
 			if(timer >= cooldownWave):
 				timer = 0
 				waveCount += 1
 				inWave = true
+				NewWave = true
 
 static func sum_array(array):
-	var sum = 0.0
-	for element in array:
-		sum += element
+	var sum = 0
+	for i in range(len(array)):
+		sum += array[i]
 	return sum
 
 func spawnArcher():

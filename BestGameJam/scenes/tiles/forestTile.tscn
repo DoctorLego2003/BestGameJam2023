@@ -1,10 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://cx550hqmryeyt"]
+[gd_scene load_steps=9 format=3 uid="uid://cx550hqmryeyt"]
 
 [ext_resource type="PackedScene" uid="uid://4h1hib3ndbw0" path="res://models/basicTiles/hex_forest_detail.gltf.glb" id="1_x1fi5"]
 [ext_resource type="PackedScene" uid="uid://c8vitilgmrdqo" path="res://models/details/detail_forestA.gltf.glb" id="2_6ncnf"]
+[ext_resource type="Theme" uid="uid://e7m7ld2wo1f4" path="res://UI/TileDescriptionFont.tres" id="3_m5vgm"]
 [ext_resource type="Script" path="res://scripts/tiles/ForestText.gd" id="3_q0hqq"]
+[ext_resource type="Texture2D" uid="uid://cfrj2g3eh6fqr" path="res://UI/templates/ExportedIcons/Item3.png" id="4_ad0rg"]
+[ext_resource type="StyleBox" uid="uid://cwrlyafg7l4" path="res://UI/TileDescription.tres" id="5_2w1un"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_r53l6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8d536"]
+texture = ExtResource("4_ad0rg")
 
 [node name="forestTile" type="Node3D"]
 
@@ -23,14 +29,30 @@ shape = SubResource("CylinderShape3D_r53l6")
 
 [node name="TextEdit" type="TextEdit" parent="."]
 visible = false
-offset_left = 846.0
-offset_top = 576.0
-offset_right = 1154.0
-offset_bottom = 650.0
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -80.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("3_m5vgm")
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_8d536")
+theme_override_styles/read_only = ExtResource("5_2w1un")
 text = "Forest Tile:
 There are too many trees for towers."
 editable = false
+context_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+wrap_mode = 1
 script = ExtResource("3_q0hqq")
 
 [connection signal="input_event" from="Area3D" to="TextEdit" method="_on_area_3d_input_event"]

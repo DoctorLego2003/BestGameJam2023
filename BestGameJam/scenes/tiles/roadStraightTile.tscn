@@ -8,7 +8,7 @@
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_8b1qr"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r0qxp"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ich3f"]
 texture = ExtResource("3_cdif8")
 
 [node name="roadStraightTile" type="Node3D"]
@@ -35,7 +35,7 @@ grow_horizontal = 0
 grow_vertical = 0
 theme = ExtResource("2_fvxy3")
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("StyleBoxTexture_r0qxp")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ich3f")
 theme_override_styles/read_only = ExtResource("4_tyxn8")
 text = "Road Tile:
 Beware of traveling enemies!"
@@ -47,6 +47,7 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 virtual_keyboard_enabled = false
 middle_mouse_paste_enabled = false
+wrap_mode = 1
 script = ExtResource("2_533l7")
 
 [connection signal="input_event" from="Area3D" to="TextEdit" method="_on_area_3d_input_event"]
