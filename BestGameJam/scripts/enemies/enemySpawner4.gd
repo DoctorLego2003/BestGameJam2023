@@ -20,6 +20,10 @@ var enemyType
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	waveCount = 0
+	NewWave = true
+	inWave = true
+	amountSpawned = 0
 	path = self.get_node("path")
 
 

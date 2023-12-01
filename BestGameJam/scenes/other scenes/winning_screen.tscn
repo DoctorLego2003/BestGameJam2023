@@ -20,13 +20,13 @@ cache/1/16/0/underline_thickness = 0.0
 cache/1/16/0/scale = 1.0
 cache/1/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
-[sub_resource type="FontVariation" id="FontVariation_ts2k7"]
+[sub_resource type="FontVariation" id="FontVariation_pxbwu"]
 base_font = SubResource("FontFile_f01m3")
 spacing_glyph = 5
 spacing_space = 5
 
 [sub_resource type="Theme" id="Theme_8ys31"]
-/fonts/font = SubResource("FontVariation_ts2k7")
+/fonts/font = SubResource("FontVariation_pxbwu")
 
 [sub_resource type="FontVariation" id="FontVariation_81m11"]
 variation_embolden = 0.7

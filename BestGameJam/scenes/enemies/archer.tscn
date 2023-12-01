@@ -8,7 +8,7 @@
 [node name="archer" type="PathFollow3D"]
 script = ExtResource("1_h11gq")
 health = 1
-speed = 4
+speed = 3
 
 [node name="character_skeleton_archer" parent="." instance=ExtResource("2_g0sdc")]
 transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 0, 0, 0)

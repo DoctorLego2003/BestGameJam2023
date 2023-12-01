@@ -23,4 +23,4 @@ func _on_area_3d_area_entered(area):
 		var main = get_node("/root/main")
 		var newLives = main.get_meta('Lives') - damage
 		main.set_meta("Lives", newLives)
-		get_parent().remove_child(self)
+		self.queue_free()
