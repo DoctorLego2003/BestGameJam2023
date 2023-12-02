@@ -59,6 +59,7 @@ text = "YOU DIED"
 fit_content = true
 
 [node name="Button" type="Button" parent="."]
+layout_mode = 0
 offset_left = 434.0
 offset_top = 471.0
 offset_right = 720.0
