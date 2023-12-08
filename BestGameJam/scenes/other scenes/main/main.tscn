@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dj5o5hrsdftgc"]
+[gd_scene load_steps=39 format=3 uid="uid://dj5o5hrsdftgc"]
 
 [ext_resource type="Script" path="res://scripts/otherScenes/main.gd" id="1_3caj8"]
 [ext_resource type="PackedScene" uid="uid://cx550hqmryeyt" path="res://scenes/tiles/forestTile.tscn" id="2_oo3ti"]
@@ -28,8 +28,9 @@
 [ext_resource type="Texture2D" uid="uid://cpia0cutcaqvw" path="res://UI/templates/ExportedIcons/Icon_Heart.png" id="25_m81gm"]
 [ext_resource type="Script" path="res://scripts/otherScenes/lives.gd" id="26_gqror"]
 [ext_resource type="FontFile" uid="uid://0toj8kkqwoeo" path="res://UI/fonts/hf-free-complete/futile-pro-v1/FutilePro.ttf" id="26_l320p"]
-[ext_resource type="Texture2D" uid="uid://cfrj2g3eh6fqr" path="res://UI/templates/ExportedIcons/Item3.png" id="27_l234i"]
 [ext_resource type="FontFile" uid="uid://bw7sv6mpwnslq" path="res://UI/fonts/hf-free-complete/compass-pro-v1.1/CompassPro.otf" id="28_xc3yi"]
+[ext_resource type="Texture2D" uid="uid://b001qn3jxfoqd" path="res://UI/templates/ExportedIcons/Icon_SquareStraight.png" id="29_klhcn"]
+[ext_resource type="Texture2D" uid="uid://d3cno1lrcr5bp" path="res://UI/templates/ExportedIcons/Item2.png" id="29_sjo8y"]
 
 [sub_resource type="Theme" id="Theme_vlpqb"]
 default_font = ExtResource("26_l320p")
@@ -52,6 +53,7 @@ default_font_size = 26
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a0i0a"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3aaph"]
+content_margin_left = 15.0
 
 [node name="main" type="Node3D"]
 script = ExtResource("1_3caj8")
@@ -1144,7 +1146,6 @@ middle_mouse_paste_enabled = false
 script = ExtResource("26_gqror")
 
 [node name="TowerPlaceUI" type="Control" parent="."]
-visible = false
 light_mask = 1024
 visibility_layer = 1024
 layout_mode = 3
@@ -1154,6 +1155,45 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+
+[node name="TextureRect2" type="TextureRect" parent="TowerPlaceUI"]
+z_index = 5
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -152.0
+offset_top = -145.857
+offset_right = -52.0
+offset_bottom = -45.8571
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("29_klhcn")
+expand_mode = 1
+
+[node name="TextEdit" type="RichTextLabel" parent="TowerPlaceUI/TextureRect2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -25.0
+offset_right = 50.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_6d84i")
+theme_override_colors/default_color = Color(0.670588, 0.85098, 0.792157, 1)
+theme_override_colors/font_shadow_color = Color(0.2, 0.2, 0.2, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a0i0a")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3aaph")
+text = "Cancel with C"
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
 
 [node name="TextureRect" type="TextureRect" parent="TowerPlaceUI"]
 z_index = 5
@@ -1169,7 +1209,7 @@ offset_right = 220.0
 offset_bottom = -40.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("27_l234i")
+texture = ExtResource("29_sjo8y")
 expand_mode = 1
 
 [node name="TextEdit" type="RichTextLabel" parent="TowerPlaceUI/TextureRect"]

@@ -20,4 +20,9 @@ func _process(delta):
 	else:
 		#don't show UI layer
 		$TowerPlaceUI.visible = false
+		
+func _input(event):
+	if event is InputEventKey:
+		if event.keycode == KEY_C:
+			self.set_meta("TowerIsClicked", false)
 	

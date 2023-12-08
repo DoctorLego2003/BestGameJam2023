@@ -1,55 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://xi6dqtcswlvp"]
+[gd_scene load_steps=9 format=3 uid="uid://xi6dqtcswlvp"]
 
+[ext_resource type="Script" path="res://scripts/tiles/grassTile.gd" id="1_ogvma"]
 [ext_resource type="PackedScene" uid="uid://4h1hib3ndbw0" path="res://models/basicTiles/hex_forest_detail.gltf.glb" id="1_wldlt"]
 [ext_resource type="Theme" uid="uid://e7m7ld2wo1f4" path="res://UI/TileDescriptionFont.tres" id="2_qa1kn"]
 [ext_resource type="Texture2D" uid="uid://cfrj2g3eh6fqr" path="res://UI/templates/ExportedIcons/Item3.png" id="3_yjtkl"]
 [ext_resource type="StyleBox" uid="uid://cwrlyafg7l4" path="res://UI/TileDescription.tres" id="4_uca33"]
+[ext_resource type="Script" path="res://scripts/tiles/grassText.gd" id="6_fhhit"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_efjdy"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ich3f"]
 texture = ExtResource("3_yjtkl")
 
-[sub_resource type="GDScript" id="GDScript_xnu64"]
-script/source = "extends TextEdit
-
-var newGrass = preload(\"res://scenes/tiles/grassTile.tscn\")
-var newTower = preload(\"res://scenes/tiles/tower.tscn\")
-
-func _on_area_3d_input_event(camera, event, position, normal, shape_idx):
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_MASK_LEFT and event.pressed:
-			visible = true
-			var main = get_node(\"/root/main\")
-			if (main.get_meta(\"TowerIsClicked\")):
-				switch(main.get_meta(\"ClickedTowerPath\"), main.get_meta(\"ClickedTowerPos\"), get_parent())
-
-func _on_area_3d_mouse_exited():
-	visible = false
-
-func switch(towerPath, towerPos, grass):
-	var main = get_node(\"/root/main\")
-	var tower = get_node(towerPath)
-	var g = newGrass.instantiate()
-	var t = newTower.instantiate()
-	main.get_node(\"gameboard\").add_child(g)
-	main.get_node(\"gameboard\").add_child(t)
-	
-	var grassPos = grass.position
-	
-	t.position = grassPos
-	g.position = towerPos
-	
-	tower.get_parent().remove_child(tower)
-	grass.get_parent().remove_child(grass)
-	
-	#to.remove_from_group(\"gameboard\")
-	main.set_meta(\"TowerIsClicked\", false)
-	main.set_meta(\"ClickedTowerPath\", null)
-
-"
-
 [node name="grassTile" type="Node3D"]
+script = ExtResource("1_ogvma")
 
 [node name="grassTileModel" parent="." instance=ExtResource("1_wldlt")]
 metadata/towerPlaceable = true
@@ -86,7 +50,14 @@ drag_and_drop_selection_enabled = false
 virtual_keyboard_enabled = false
 middle_mouse_paste_enabled = false
 wrap_mode = 1
-script = SubResource("GDScript_xnu64")
+script = ExtResource("6_fhhit")
 
+[node name="Highlight" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2, 0)
+visible = false
+
+[connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]
 [connection signal="input_event" from="Area3D" to="TextEdit" method="_on_area_3d_input_event"]
+[connection signal="mouse_entered" from="Area3D" to="." method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="Area3D" to="." method="_on_area_3d_mouse_exited"]
 [connection signal="mouse_exited" from="Area3D" to="TextEdit" method="_on_area_3d_mouse_exited"]
