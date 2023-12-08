@@ -11,6 +11,7 @@ script = ExtResource("1_sgu5n")
 health = 4
 speed = 1
 damage = 5
+score = 4
 
 [node name="Area3D" type="Area3D" parent="." groups=["enemy"]]
 collision_layer = 2

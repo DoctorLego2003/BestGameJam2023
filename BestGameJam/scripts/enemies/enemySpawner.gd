@@ -18,18 +18,17 @@ var NewWave = true
 var enemyType
 @export var waves =  [[2,1,0],[4,2,0],[4,3,0],[4,4,1],[3,5,3],[3,6,2],[3,8,3],[0,9,4],[4,8,5]] 
 
+var allCount
+var totalDead = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	waveCount = 0
-	NewWave = true
-	inWave = true
-	amountSpawned = 0
 	path = self.get_node("path")
-
+	allCount = sum_array(waves)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if (waveCount <= waves.size() -1):
+	if (waveCount < waves.size()):
 		if inWave:
 			if (NewWave):
 				NewWave = false
@@ -59,11 +58,18 @@ func _process(delta):
 				waveCount += 1
 				inWave = true
 				NewWave = true
+			if totalDead >= allCount:
+				get_parent().Spawner1Done = true
+	elif totalDead >= allCount:
+		get_parent().Spawner1Done = true
+		totalDead -= 1
 
 static func sum_array(array):
+	if array is int:
+		return array
 	var sum = 0
-	for i in range(len(array)):
-		sum += array[i]
+	for i in array:
+		sum += sum_array(i)
 	return sum
 
 func spawnArcher():
@@ -73,5 +79,5 @@ func spawnMinion():
 	path.add_child(minion.instantiate())
 	
 func spawnWarrior():
-	path.add_child(warrior.instantiate())
-	
+	path.add_child(warrior.instantiate())	
+

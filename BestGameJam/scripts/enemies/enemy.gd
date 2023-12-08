@@ -1,12 +1,16 @@
 extends PathFollow3D
 
-@export var health : int = 2
-@export var speed : int = 2
-@export var damage : int = 1
+@export var health : int 
+@export var speed : int 
+@export var damage : int 
+@export var score : int
 
 func _process(delta):
 	move(delta)
 	if (self.health <= 0):
+		var main = get_node("/root/main")
+		main.set_meta("Score", main.get_meta("Score") + score)
+		get_parent().get_parent().totalDead += 1
 		queue_free()
 	
 func move(delta):

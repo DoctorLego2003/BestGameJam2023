@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://dj5o5hrsdftgc"]
+[gd_scene load_steps=49 format=3 uid="uid://dj5o5hrsdftgc"]
 
 [ext_resource type="Script" path="res://scripts/otherScenes/main.gd" id="1_3caj8"]
 [ext_resource type="PackedScene" uid="uid://cx550hqmryeyt" path="res://scenes/tiles/forestTile.tscn" id="2_oo3ti"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://6te2cmysfm7y" path="res://scenes/tiles/watercornerTile.tscn" id="12_jhkr4"]
 [ext_resource type="PackedScene" uid="uid://b5grntren6x80" path="res://scenes/tiles/waterHalfTile.tscn" id="13_386yi"]
 [ext_resource type="PackedScene" uid="uid://bc8o0ufx7i35c" path="res://models/waterTiles/hex_water_detail.gltf.glb" id="16_6lttv"]
+[ext_resource type="Script" path="res://scripts/enemies/Spawners.gd" id="17_rx7p7"]
 [ext_resource type="AudioStream" uid="uid://cijkpukaasuc8" path="res://sounds/magic-tavern-138952.mp3" id="18_p5awv"]
 [ext_resource type="PackedScene" uid="uid://b5rffw6igpr46" path="res://scenes/other scenes/main/path2.tscn" id="19_eimpx"]
 [ext_resource type="Script" path="res://scripts/enemies/enemySpawner2.gd" id="19_frt6u"]
@@ -29,15 +30,18 @@
 [ext_resource type="Script" path="res://scripts/otherScenes/lives.gd" id="26_gqror"]
 [ext_resource type="FontFile" uid="uid://0toj8kkqwoeo" path="res://UI/fonts/hf-free-complete/futile-pro-v1/FutilePro.ttf" id="26_l320p"]
 [ext_resource type="FontFile" uid="uid://bw7sv6mpwnslq" path="res://UI/fonts/hf-free-complete/compass-pro-v1.1/CompassPro.otf" id="28_xc3yi"]
+[ext_resource type="Script" path="res://scripts/otherScenes/Score.gd" id="29_hcm7i"]
 [ext_resource type="Texture2D" uid="uid://b001qn3jxfoqd" path="res://UI/templates/ExportedIcons/Icon_SquareStraight.png" id="29_klhcn"]
 [ext_resource type="Texture2D" uid="uid://d3cno1lrcr5bp" path="res://UI/templates/ExportedIcons/Item2.png" id="29_sjo8y"]
-[ext_resource type="Script" path="res://scenes/other scenes/main/PauseScreen.gd" id="32_3qj75"]
+[ext_resource type="Texture2D" uid="uid://qt7fhtvwugjx" path="res://UI/templates/ExportedIcons/Icon_Ghost.png" id="30_bf04d"]
+[ext_resource type="Script" path="res://scripts/otherScenes/PauseScreen.gd" id="34_s77ew"]
+[ext_resource type="FontFile" uid="uid://b6d7pahdkqek7" path="res://UI/fonts/hf-free-complete/compass-pro-v1.1/CompassPro.ttf" id="36_wny0q"]
 
 [sub_resource type="Theme" id="Theme_vlpqb"]
 default_font = ExtResource("26_l320p")
 default_font_size = 26
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1hq8d"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mm21p"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ha6x"]
 
@@ -46,6 +50,15 @@ content_margin_left = 10.0
 content_margin_top = 5.0
 content_margin_right = 10.0
 content_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1hq8d"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_w14tu"]
+keycode = 4194305
+echo = true
+
+[sub_resource type="Shortcut" id="Shortcut_82e4r"]
+events = [SubResource("InputEventKey_w14tu")]
 
 [sub_resource type="Theme" id="Theme_6d84i"]
 default_font = ExtResource("28_xc3yi")
@@ -58,6 +71,10 @@ content_margin_left = 15.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_relqy"]
 bg_color = Color(0.184314, 0.184314, 0.184314, 0.890196)
+
+[sub_resource type="Theme" id="Theme_6peyx"]
+default_font = ExtResource("36_wny0q")
+default_font_size = 45
 
 [node name="main" type="Node3D"]
 script = ExtResource("1_3caj8")
@@ -1051,103 +1068,167 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -5.196)
 [node name="themeSong" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("18_p5awv")
 
-[node name="enemySpawner" parent="." instance=ExtResource("11_8jhl8")]
+[node name="Spawners" type="Node3D" parent="."]
+script = ExtResource("17_rx7p7")
+
+[node name="enemySpawner" parent="Spawners" instance=ExtResource("11_8jhl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -5.196)
 intervalSpawn = 0.5
 
-[node name="path" parent="enemySpawner" instance=ExtResource("9_x2yvr")]
+[node name="path" parent="Spawners/enemySpawner" instance=ExtResource("9_x2yvr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 5.196)
 
-[node name="SpawnSound" type="AudioStreamPlayer" parent="enemySpawner"]
+[node name="SpawnSound" type="AudioStreamPlayer" parent="Spawners/enemySpawner"]
 stream = ExtResource("19_h0vd1")
 
-[node name="enemySpawner2" parent="." instance=ExtResource("11_8jhl8")]
+[node name="enemySpawner2" parent="Spawners" instance=ExtResource("11_8jhl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("19_frt6u")
 intervalSpawn = 0.5
 waves = [[0, 3, 0], [1, 2, 0], [2, 3, 0], [3, 3, 0], [3, 4, 1], [4, 4, 2], [6, 4, 1], [8, 4, 2], [6, 6, 4]]
 
-[node name="path" parent="enemySpawner2" instance=ExtResource("19_eimpx")]
+[node name="path" parent="Spawners/enemySpawner2" instance=ExtResource("19_eimpx")]
 
-[node name="SpawnSound" type="AudioStreamPlayer" parent="enemySpawner2"]
+[node name="SpawnSound" type="AudioStreamPlayer" parent="Spawners/enemySpawner2"]
 stream = ExtResource("19_h0vd1")
 
-[node name="enemySpawner3" parent="." instance=ExtResource("11_8jhl8")]
+[node name="enemySpawner3" parent="Spawners" instance=ExtResource("11_8jhl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("21_74ke4")
 cooldownWave = 15
 intervalSpawn = 0.5
 waves = [[0, 3, 0], [0, 3, 0], [0, 4, 0], [2, 3, 0], [2, 3, 1], [3, 3, 1], [5, 2, 2], [0, 0, 7], [0, 4, 3]]
 
-[node name="path" parent="enemySpawner3" instance=ExtResource("20_snhds")]
+[node name="path" parent="Spawners/enemySpawner3" instance=ExtResource("20_snhds")]
 
-[node name="SpawnSound" type="AudioStreamPlayer" parent="enemySpawner3"]
+[node name="SpawnSound" type="AudioStreamPlayer" parent="Spawners/enemySpawner3"]
 stream = ExtResource("19_h0vd1")
 
-[node name="enemySpawner4" parent="." instance=ExtResource("11_8jhl8")]
+[node name="enemySpawner4" parent="Spawners" instance=ExtResource("11_8jhl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("23_34wbf")
 cooldownWave = 8
 intervalSpawn = 0.5
 waves = [[0, 2, 1], [0, 3, 2], [2, 4, 3], [3, 4, 3], [4, 4, 4], [2, 2, 6], [0, 3, 7], [10, 5, 0], [9, 6, 3]]
 
-[node name="path" parent="enemySpawner4" instance=ExtResource("21_kxf4j")]
+[node name="path" parent="Spawners/enemySpawner4" instance=ExtResource("21_kxf4j")]
 
-[node name="SpawnSound" type="AudioStreamPlayer" parent="enemySpawner4"]
+[node name="SpawnSound" type="AudioStreamPlayer" parent="Spawners/enemySpawner4"]
 stream = ExtResource("19_h0vd1")
 
-[node name="HeartUILayer" type="Control" parent="."]
+[node name="AlwaysActiveUI" type="Node" parent="."]
+process_mode = 1
+
+[node name="ScoreUILayer" type="Control" parent="AlwaysActiveUI"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 100.0
+offset_bottom = 100.0
+
+[node name="Score" type="LineEdit" parent="AlwaysActiveUI/ScoreUILayer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+offset_left = 50.0
+offset_right = 122.0
+offset_bottom = 50.0
+mouse_filter = 1
+theme = SubResource("Theme_vlpqb")
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mm21p")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5ha6x")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_2iy3w")
+text = "0"
+max_length = 10
+editable = false
+expand_to_text_length = true
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+script = ExtResource("29_hcm7i")
+
+[node name="TextureRect" type="TextureRect" parent="AlwaysActiveUI/ScoreUILayer"]
+layout_mode = 0
+offset_left = 15.0
+offset_right = 55.0
+offset_bottom = 40.0
+texture = ExtResource("30_bf04d")
+expand_mode = 1
+
+[node name="HeartUILayer" type="Control" parent="AlwaysActiveUI"]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -41.0
-offset_top = -134.0
-offset_right = -1.0
-offset_bottom = -94.0
+offset_left = -20.0
+offset_top = -119.0
+offset_right = 20.0
+offset_bottom = -79.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="HeartTexture" type="TextureRect" parent="HeartUILayer"]
+[node name="HeartTexture" type="TextureRect" parent="AlwaysActiveUI/HeartUILayer"]
+modulate = Color(1, 1, 1, 0.784314)
 custom_minimum_size = Vector2(75, 75)
-layout_mode = 2
-offset_right = 80.0481
-offset_bottom = 75.0
-texture = ExtResource("25_m81gm")
-expand_mode = 3
-
-[node name="HeartCount" type="TextEdit" parent="HeartUILayer/HeartTexture"]
-custom_minimum_size = Vector2(40, 40)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -40.0241
+offset_top = -37.5
+offset_right = 40.0241
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("25_m81gm")
+expand_mode = 3
+
+[node name="HeartCount" type="LineEdit" parent="AlwaysActiveUI/HeartUILayer/HeartTexture"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -15.5
+offset_right = 36.0
+offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 theme = SubResource("Theme_vlpqb")
-theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_1hq8d")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_5ha6x")
 theme_override_styles/read_only = SubResource("StyleBoxEmpty_2iy3w")
+alignment = 1
+max_length = 10
 editable = false
+expand_to_text_length = true
 context_menu_enabled = false
+virtual_keyboard_enabled = false
 shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
 selecting_enabled = false
 deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
-virtual_keyboard_enabled = false
-middle_mouse_paste_enabled = false
 script = ExtResource("26_gqror")
+
+[node name="MenuButton" type="Button" parent="AlwaysActiveUI"]
+process_mode = 1
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 90.0
+offset_bottom = 90.0
+shortcut = SubResource("Shortcut_82e4r")
+text = "Menu"
 
 [node name="TowerPlaceUI" type="Control" parent="."]
 visible = false
@@ -1248,32 +1329,45 @@ mouse_filter = 1
 [node name="PauseScreen" type="Control" parent="."]
 process_mode = 2
 visible = false
+z_index = 100
 layout_mode = 3
-anchors_preset = 0
-offset_right = 1153.0
-offset_bottom = 648.0
-script = ExtResource("32_3qj75")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("34_s77ew")
 
 [node name="Panel" type="Panel" parent="PauseScreen"]
-layout_mode = 0
-offset_right = 1153.0
-offset_bottom = 649.0
+z_index = 100
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_relqy")
 
 [node name="Button" type="Button" parent="PauseScreen"]
-custom_minimum_size = Vector2(100, 40)
+z_index = 100
+custom_minimum_size = Vector2(200, 80)
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -4.0
-offset_top = -8.0
-offset_right = 4.0
+offset_left = -50.0
+offset_top = -148.0
+offset_right = 50.0
+offset_bottom = -108.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = SubResource("Theme_6peyx")
+theme_override_colors/font_pressed_color = Color(0.482353, 0.482353, 0.482353, 1)
+theme_override_colors/font_hover_color = Color(0.615686, 0.615686, 0.615686, 1)
 text = "Continue"
 icon_alignment = 1
 
+[connection signal="pressed" from="AlwaysActiveUI/MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="PauseScreen/Button" to="PauseScreen" method="_on_button_pressed"]
