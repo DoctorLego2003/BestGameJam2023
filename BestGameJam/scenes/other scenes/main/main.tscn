@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dj5o5hrsdftgc"]
+[gd_scene load_steps=41 format=3 uid="uid://dj5o5hrsdftgc"]
 
 [ext_resource type="Script" path="res://scripts/otherScenes/main.gd" id="1_3caj8"]
 [ext_resource type="PackedScene" uid="uid://cx550hqmryeyt" path="res://scenes/tiles/forestTile.tscn" id="2_oo3ti"]
@@ -31,6 +31,7 @@
 [ext_resource type="FontFile" uid="uid://bw7sv6mpwnslq" path="res://UI/fonts/hf-free-complete/compass-pro-v1.1/CompassPro.otf" id="28_xc3yi"]
 [ext_resource type="Texture2D" uid="uid://b001qn3jxfoqd" path="res://UI/templates/ExportedIcons/Icon_SquareStraight.png" id="29_klhcn"]
 [ext_resource type="Texture2D" uid="uid://d3cno1lrcr5bp" path="res://UI/templates/ExportedIcons/Item2.png" id="29_sjo8y"]
+[ext_resource type="Script" path="res://scenes/other scenes/main/PauseScreen.gd" id="32_3qj75"]
 
 [sub_resource type="Theme" id="Theme_vlpqb"]
 default_font = ExtResource("26_l320p")
@@ -54,6 +55,9 @@ default_font_size = 26
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3aaph"]
 content_margin_left = 15.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_relqy"]
+bg_color = Color(0.184314, 0.184314, 0.184314, 0.890196)
 
 [node name="main" type="Node3D"]
 script = ExtResource("1_3caj8")
@@ -1146,6 +1150,7 @@ middle_mouse_paste_enabled = false
 script = ExtResource("26_gqror")
 
 [node name="TowerPlaceUI" type="Control" parent="."]
+visible = false
 light_mask = 1024
 visibility_layer = 1024
 layout_mode = 3
@@ -1157,18 +1162,15 @@ grow_vertical = 2
 mouse_filter = 1
 
 [node name="TextureRect2" type="TextureRect" parent="TowerPlaceUI"]
-z_index = 5
+z_index = 6
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
+anchors_preset = 2
 anchor_top = 1.0
-anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -152.0
-offset_top = -145.857
-offset_right = -52.0
-offset_bottom = -45.8571
-grow_horizontal = 0
+offset_left = 20.0
+offset_top = -133.0
+offset_right = 120.0
+offset_bottom = -33.0001
 grow_vertical = 0
 texture = ExtResource("29_klhcn")
 expand_mode = 1
@@ -1242,3 +1244,36 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+
+[node name="PauseScreen" type="Control" parent="."]
+process_mode = 2
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1153.0
+offset_bottom = 648.0
+script = ExtResource("32_3qj75")
+
+[node name="Panel" type="Panel" parent="PauseScreen"]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 649.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_relqy")
+
+[node name="Button" type="Button" parent="PauseScreen"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Continue"
+icon_alignment = 1
+
+[connection signal="pressed" from="PauseScreen/Button" to="PauseScreen" method="_on_button_pressed"]

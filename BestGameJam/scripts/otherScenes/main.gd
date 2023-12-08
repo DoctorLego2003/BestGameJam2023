@@ -23,6 +23,10 @@ func _process(delta):
 		
 func _input(event):
 	if event is InputEventKey:
-		if event.keycode == KEY_C:
+		if event.keycode == KEY_ESCAPE:
+			$PauseScreen.visible = true
+			get_tree().paused = true
+		elif event.keycode == KEY_C:
 			self.set_meta("TowerIsClicked", false)
+		
 	

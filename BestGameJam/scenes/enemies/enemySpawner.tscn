@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://chre6n0k5wy12" path="res://scenes/enemies/warrior.tscn" id="4_nmkpy"]
 
 [node name="enemySpawner" type="Node3D"]
+process_mode = 1
 script = ExtResource("1_xec3u")
 minion = ExtResource("2_y13oq")
 archer = ExtResource("3_4kj0n")
